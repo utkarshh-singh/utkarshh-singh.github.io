@@ -44,7 +44,7 @@
       "location": "Remote",
       "startDate": "2022-10",
       "endDate": "2025-04",
-      "current": true,
+      "current": false,
       "type": "industry",
       "tags": ["consulting", "quantum computing", "industry", "startup"],
       "highlights": [

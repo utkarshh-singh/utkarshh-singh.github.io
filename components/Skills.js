@@ -162,7 +162,7 @@ function buildTimeline(items, prefix) {
       <div class="timeline-item__dot"></div>
       <div class="timeline-item__content">
         <div class="timeline-item__period">
-          ${item.startYear ?? item.start ?? ''} — ${item.endYear ?? item.end ?? 'Present'}
+          ${formatExpDate(item.startDate)} — ${item.current && !item.endDate ? 'Present' : formatExpDate(item.endDate)}
         </div>
         <h4 class="timeline-item__title">
           ${item.degree ?? item.role ?? item.title ?? ''}
@@ -198,4 +198,13 @@ function externalIcon() {
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
     <polyline points="15 3 21 3 21 9"/>
     <line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+}
+
+function formatExpDate(dateStr) {
+  if (!dateStr) return '';
+  const [year, month] = dateStr.split('-');
+  if (!month) return year;
+  const months = ['Jan','Feb','Mar','Apr','May','Jun',
+                  'Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[parseInt(month) - 1]} ${year}`;
 }

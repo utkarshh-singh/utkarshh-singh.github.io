@@ -12,7 +12,7 @@ export async function buildExperience() {
   const data = await fetchJSON('./content/experience.json');
   if (!data) return '<p class="error-state">Could not load experience.</p>';
 
-  const jobs = data.experience ?? [];
+  const jobs = data.items ?? [];
 
   return `
     <section class="experience-section section" aria-labelledby="exp-standalone-heading">
@@ -28,9 +28,9 @@ export async function buildExperience() {
               <div class="timeline-item__dot"></div>
               <div class="timeline-item__content">
                 <div class="timeline-item__period">
-                  ${formatExpDate(job.date_start)} — ${job.is_current || !job.date_end ? 'Present' : formatExpDate(job.date_end)}
+                  ${formatExpDate(job.startDate)} — ${job.current || !job.endDate ? 'Present' : formatExpDate(job.endDate)}
                 </div>
-                <h4 class="timeline-item__title">${job.role_title ''}</h4>
+                <h4 class="timeline-item__title">${job.role ?? ''}</h4>
                 <p class="timeline-item__org">
                   ${job.organization ''}
                   ${job.location ? `<span class="timeline-item__loc"> · ${job.location}</span>` : ''}

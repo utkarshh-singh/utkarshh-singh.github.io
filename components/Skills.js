@@ -149,32 +149,88 @@ function buildSkillGroups(data) {
 function buildCertCards(data) {
   if (!data) return '<p class="error-state">Could not load certifications.</p>';
 
-  const all = [
-    ...(data.certifications ?? []),
-    ...(data.ibmBadges ?? []),
-    ...(data.leadership ?? []),
-  ];
+  const certifications = data.certifications ?? [];
+  const badges = data.badges ?? [];
+  const awards = data.awards ?? [];
 
-  if (!all.length) return '<p class="error-state">No certifications found.</p>';
+  const groups = [
+    { label: 'Certifications', icon: '🎓', items: certifications, type: 'cert' },
+    { label: 'Badges',         icon: '🏅', items: badges,         type: 'badge' },
+    { label: 'Awards',         icon: '🏆', items: awards,         type: 'award' },
+  ].filter(g => g.items.length > 0);
 
-  return all.map(cert => `
-    <div class="cert-card card card--compact">
-      <div class="cert-card__top">
-        <span class="tag tag--primary">${cert.issuer ?? cert.organization ?? 'IBM'}</span>
-        ${cert.year ?? cert.date ? `
-          <span class="cert-card__year">${cert.year ?? cert.date}</span>
-        ` : ''}
+  return `
+    <div class="creds-tabs">
+      <div class="creds-tabs__nav" role="tablist">
+        ${groups.map((g, i) => `
+          <button class="creds-tabs__tab ${i === 0 ? 'is-active' : ''}"
+            role="tab" aria-selected="${i === 0}"
+            aria-controls="creds-panel-${i}"
+            onclick="
+              this.closest('.creds-tabs').querySelectorAll('.creds-tabs__tab').forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+              this.closest('.creds-tabs').querySelectorAll('.creds-tabs__panel').forEach(p => p.classList.remove('is-active'));
+              this.classList.add('is-active'); this.setAttribute('aria-selected','true');
+              document.getElementById('creds-panel-${i}').classList.add('is-active');
+            ">
+            ${g.icon} ${g.label}
+            <span class="creds-tabs__count">${g.items.length}</span>
+          </button>
+        `).join('')}
       </div>
-      <h4 class="cert-card__title">${cert.name ?? cert.title}</h4>
-      ${cert.credentialUrl ?? cert.url ? `
-        <a href="${cert.credentialUrl ?? cert.url}"
-           class="card__link" target="_blank" rel="noopener noreferrer"
-           aria-label="Verify ${cert.name ?? cert.title}">
-          ${externalIcon()} Verify
+
+      <div class="creds-tabs__panels">
+        ${groups.map((g, i) => `
+          <div class="creds-tabs__panel ${i === 0 ? 'is-active' : ''}"
+              role="tabpanel" id="creds-panel-${i}">
+            <div class="creds-slider">
+              <button class="creds-slider__btn" aria-label="Previous" onclick="
+                this.nextElementSibling.scrollBy({ left: -300, behavior: 'smooth' })">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <div class="creds-grid">
+                ${g.items.map(item => credCard(item, g.type)).join('')}
+              </div>
+              <button class="creds-slider__btn" aria-label="Next" onclick="
+                this.previousElementSibling.scrollBy({ left: 300, behavior: 'smooth' })">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function credCard(item, type) {
+  const title      = item.name ?? item.title ?? '';
+  const displayName = item.displayName ?? title;
+  const org        = item.issuer ?? item.issuerShort ?? item.organization ?? '';
+  const year       = item.year ?? item.date ?? '';
+  const url        = item.credentialUrl ?? item.url ?? null;
+  const desc       = item.description ?? '';
+  const group      = item.group ?? '';
+
+  const typeIcon = { cert: '📜', badge: '🏅', award: '🏆' }[type] ?? '✦';
+
+  return `
+    <div class="cred-card ${item.featured ? 'cred-card--featured' : ''}">
+      <div class="cred-card__header">
+        <div class="cred-card__meta">
+          ${org ? `<span class="cred-card__org">${org}</span>` : ''}
+          ${year ? `<span class="cred-card__year">${year}</span>` : ''}
+        </div>
+        ${group ? `<span class="cred-card__group">${group}</span>` : ''}
+      </div>
+      <h4 class="cred-card__title">${displayName}</h4>
+      ${desc ? `<p class="cred-card__desc">${desc}</p>` : ''}
+      ${url ? `
+        <a href="${url}" target="_blank" rel="noopener noreferrer" class="cred-card__link">
+          Verify ${externalIcon()}
         </a>
       ` : ''}
     </div>
-  `).join('');
+  `;
 }
 
 /* ─── Timeline (Education + Experience) ─────────────────────*/

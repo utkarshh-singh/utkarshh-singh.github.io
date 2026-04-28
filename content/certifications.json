@@ -27,7 +27,7 @@
       "description": "Advanced credential covering quantum error correction principles including the Shor code and advanced code families.",
       "skills": ["Quantum Error Correction", "Quantum Computing", "Quantum Information"],
       "featured": true,
-      "displayPriority": 2,
+      "displayPriority": 1,
       "group": "Quantum Core"
     },
     {
@@ -42,7 +42,7 @@
       "description": "Comprehensive deep learning specialization covering neural architectures, CNNs, RNNs, Transformers, and practical ML workflows.",
       "skills": ["Deep Learning", "TensorFlow", "CNNs", "RNNs", "Transformers"],
       "featured": true,
-      "displayPriority": 3,
+      "displayPriority": 1,
       "group": "AI & ML"
     },
     {
@@ -57,7 +57,22 @@
       "description": "AWS credential focused on Amazon Braket and cloud-based quantum computing workflows.",
       "skills": ["Amazon Braket", "AWS", "Cloud Quantum Computing"],
       "featured": true,
-      "displayPriority": 4,
+      "displayPriority": 2,
+      "group": "Quantum Platforms"
+    },
+    {
+      "id": "uottawa-leadership",
+      "name": "Transformational Leadership",
+      "displayName": "AWS Knowledge: Amazon Braket",
+      "issuer": "Amazon Web Services",
+      "issuerShort": "AWS",
+      "year": 2024,
+      "type": "certificate",
+      "credentialUrl": "https://www.credly.com/org/amazon-web-services/badge/aws-knowledge-amazon-braket-training-badge",
+      "description": "AWS credential focused on Amazon Braket and cloud-based quantum computing workflows.",
+      "skills": ["Amazon Braket", "AWS", "Cloud Quantum Computing"],
+      "featured": true,
+      "displayPriority": 2,
       "group": "Quantum Platforms"
     }
   ],
@@ -110,7 +125,7 @@
   "awards": [
     {
       "id": "deep-tech-nrc-2024",
-      "name": "Deep Tech Canada NRC Student Award",
+      "name": "Student Award",
       "organization": "Deep Tech Canada / National Research Council Canada",
       "year": 2024,
       "event": "Quantum Days 2024",

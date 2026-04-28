@@ -115,38 +115,34 @@ export async function renderFooter() {
   const yearEl = footerEl.querySelector('#footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // At the end of renderFooter(), after setting innerHTML, inject the FAB:
   const fabHTML = `
-    <div class="fab-container" aria-label="Quick actions">
-      <!-- Back to top -->
-      <button
-        class="fab fab-top"
-        id="fab-top"
-        aria-label="Back to top"
-        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M18 15l-6-6-6 6"/>
-        </svg>
-      </button>
+    <!-- Back to top — bottom LEFT -->
+    <button
+      class="fab fab-top"
+      id="fab-top"
+      aria-label="Back to top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
 
-      <!-- Get in touch → Calendly -->
+    <!-- Chat bubble — bottom RIGHT -->
+    <div class="fab-chat-wrap">
+      <div class="fab-chat-bubble">Get in touch ✨</div>
       <a
-        class="fab fab-contact"
+        class="fab fab-chat"
         href="https://calendly.com/singhutkarsh529"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Book a call with Utkarsh Singh">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.5"
+        aria-label="Get in touch with Utkarsh Singh">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/>
-          <line x1="8" y1="2" x2="8" y2="6"/>
-          <line x1="3" y1="10" x2="21" y2="10"/>
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
-        Get in touch
       </a>
     </div>
   `;

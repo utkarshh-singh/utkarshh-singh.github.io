@@ -101,9 +101,10 @@ export async function buildContact() {
             <div class="contact-info">
               <h2>Direct Contact</h2>
 
-              <a href="mailto:${email}" class="contact-email-block">
+              <a href="mailto:${email}" class="btn btn--primary contact-email-btn"
+                style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:0.75rem;">
                 ${mailIcon()}
-                <span>${email}</span>
+                Send Email
               </a>
 
               <p class="contact-info-label">Also reachable on</p>
@@ -125,7 +126,7 @@ export async function buildContact() {
             <div class="contact-form-wrap">
               <h2>Send a Message</h2>
               <form class="contact-form"
-                    action="https://formspree.io/f/YOUR_FORM_ID"
+                    action="https://formspree.io/f/xdayqnkj"
                     method="POST">
 
                 <div class="form-row">

@@ -297,6 +297,62 @@
 }
 
 
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 6: LAVENDER
+   Soft cool-lavender surfaces + deep violet accent
+   Best for: modern, clean, reference-site aesthetic
+   ═══════════════════════════════════════════════════════════ */
+[data-palette="lavender"],
+[data-palette="lavender"][data-theme="light"] {
+  --color-bg:               #f7f6ff;
+  --color-surface:          #ffffff;
+  --color-surface-2:        #fafafa;
+  --color-surface-offset:   #f0effa;
+  --color-divider:          #dddaf5;
+  --color-border:           oklch(from #2a1f6e l c h / 0.10);
+
+  --color-text:             #1a1733;
+  --color-text-muted:       #6b658f;
+  --color-text-faint:       #a9a4c5;
+  --color-text-inverse:     #f9f8ff;
+
+  --color-primary:          #4f46e5;
+  --color-primary-hover:    #3730a3;
+  --color-primary-active:   #1e1b6e;
+  --color-primary-subtle:   #ede9fe;
+
+  --shadow-sm:  0 1px 2px oklch(0.2 0.08 280 / 0.05);
+  --shadow-md:  0 4px 12px oklch(0.2 0.08 280 / 0.08);
+  --shadow-lg:  0 12px 32px oklch(0.2 0.08 280 / 0.11);
+  --shadow-xl:  0 24px 48px oklch(0.2 0.08 280 / 0.14);
+}
+
+[data-palette="lavender"][data-theme="dark"] {
+  --color-bg:               #0e0d1a;
+  --color-surface:          #141320;
+  --color-surface-2:        #1b1a28;
+  --color-surface-offset:   #201f30;
+  --color-divider:          #2a2838;
+  --color-border:           oklch(from #c4c0e8 l c h / 0.10);
+
+  --color-text:             #c4c0e8;
+  --color-text-muted:       #6e6890;
+  --color-text-faint:       #3d3855;
+  --color-text-inverse:     #0e0d1a;
+
+  --color-primary:          #818cf8;
+  --color-primary-hover:    #a5b4fc;
+  --color-primary-active:   #c7d2fe;
+  --color-primary-subtle:   #1e1b4b;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.22);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.38);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.52);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.62);
+}
+
+
 /* ─── System preference fallback ─────────────────────────────
    If the user has never toggled manually, respect OS setting.
    ──────────────────────────────────────────────────────────── */

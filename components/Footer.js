@@ -35,7 +35,7 @@ export async function renderFooter() {
     fetchJSON('./data/nav.json'),
   ]);
 
-  const tagline  = identityData?.tagline ?? 'Researcher. Engineer. Builder.';
+  const tagline  = 'Bridging quantum computing and real-world intelligence.';
   const name     = identityData?.fullName ?? SITE.name;
   const email    = SITE.email;
   const navItems = navData?.items?.filter(i => i.visible) ?? [];
@@ -75,11 +75,10 @@ export async function renderFooter() {
         <nav class="footer-nav" aria-label="Footer navigation">
           <h4>Pages</h4>
           <ul role="list">
-            ${navItems.map(item => `
-              <li>
-                <a href="${item.href}">${item.label}</a>
-              </li>
-            `).join('')}
+            <li><a href="./research.html">Publications</a></li>
+            <li><a href="./patents.html">Patents</a></li>
+            <li><a href="./experience.html">Experience</a></li>
+            <li><a href="./skills.html">Skills</a></li>
           </ul>
         </nav>
 
@@ -88,9 +87,9 @@ export async function renderFooter() {
           <h4>Connect</h4>
           <p>Open to research collaborations, consulting, and speaking opportunities.</p>
           ${email ? `
-            <a href="mailto:${email}" class="footer-email-link">
+            <a href="mailto:${email}" class="hero-btn hero-btn--secondary" style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.5rem;">
               ${mailIcon()}
-              ${email}
+              Send Email
             </a>
           ` : ''}
         </div>
@@ -115,6 +114,51 @@ export async function renderFooter() {
   // Auto-update copyright year
   const yearEl = footerEl.querySelector('#footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // At the end of renderFooter(), after setting innerHTML, inject the FAB:
+  const fabHTML = `
+    <div class="fab-container" aria-label="Quick actions">
+      <!-- Back to top -->
+      <button
+        class="fab fab-top"
+        id="fab-top"
+        aria-label="Back to top"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 15l-6-6-6 6"/>
+        </svg>
+      </button>
+
+      <!-- Get in touch → Calendly -->
+      <a
+        class="fab fab-contact"
+        href="https://calendly.com/singhutkarsh529"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Book a call with Utkarsh Singh">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Get in touch
+      </a>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', fabHTML);
+
+  // Show/hide back-to-top on scroll
+  const fabTop = document.getElementById('fab-top');
+  if (fabTop) {
+    window.addEventListener('scroll', () => {
+      fabTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  }
 }
 
 

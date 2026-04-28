@@ -100,8 +100,10 @@ export async function buildHero() {
                 View Research
                 ${arrowIcon()}
               </a>
-              <a href="./contact.html" class="btn btn--secondary">
-                Get in Touch
+              <a href="./assets/utkarsh-singh-cv.pdf"
+                download
+                class="hero-btn hero-btn--secondary">
+                Download CV
               </a>
               <a href="https://scholar.google.com/citations?user=zWTAuq0AAAAJ"
                  class="btn btn--ghost btn--sm"

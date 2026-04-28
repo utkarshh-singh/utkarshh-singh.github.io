@@ -4,7 +4,7 @@
    This is the ONE file you edit to change the website's look.
    
    HOW TO SWITCH THEME:
-     Change PALETTE to one of: "teal" | "midnight" | "sage" | "slate" | "copper"
+     Change PALETTE to one of: "teal" | "midnight" | "sage" | "slate" | "copper" | "lavender"
    
    HOW TO CHANGE ANIMATION LEVEL:
      Change ANIMATION to: "none" | "minimal" | "moderate" | "expressive"
@@ -14,7 +14,7 @@
      "system" = follows the user's OS setting automatically
    ============================================================= */
 
-export const PALETTE       = "midnight";       // Active color palette
+export const PALETTE       = "lavender";       // Active color palette
 export const DEFAULT_MODE  = "system";     // "system" | "light" | "dark"
 export const ANIMATION     = "expressive";    // "none" | "minimal" | "moderate" | "expressive"
 

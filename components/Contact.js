@@ -24,21 +24,20 @@ const CALENDLY_URL = 'https://calendly.com/singhutkarsh529';
 
 
 export async function buildContact() {
-  const contactData = await fetchJSON('./content/contact.json');
+  const linksData = await fetchJSON('./content/links.json');
 
-  const email    = contactData?.email    ?? SITE.email;
-  const linkedin = contactData?.linkedinUrl    ?? '#';
-  const github   = contactData?.githubUrl      ?? '#';
-  const scholar  = contactData?.googleScholarUrl ?? '#';
-  const instagram= contactData?.instagramUrl   ?? '#';
-  const poetry   = contactData?.poetryBlogUrl  ?? '#';
+  const email = SITE.email;
+
+  const linkMap = Object.fromEntries(
+    (linksData?.social ?? []).map(l => [l.platform, l.url])
+  );
 
   const socialLinks = [
-    { label: 'LinkedIn',       href: linkedin,  icon: linkedinIcon()  },
-    { label: 'GitHub',         href: github,    icon: githubIcon()    },
-    { label: 'Google Scholar', href: scholar,   icon: scholarIcon()   },
-    { label: 'Instagram',      href: instagram, icon: instagramIcon() },
-    { label: 'Shabdras',       href: poetry,    icon: featherIcon()   },
+    { label: 'LinkedIn',       href: linkMap['LinkedIn']       ?? '#', icon: linkedinIcon()  },
+    { label: 'GitHub',         href: linkMap['GitHub']         ?? '#', icon: githubIcon()    },
+    { label: 'Google Scholar', href: linkMap['Google Scholar'] ?? '#', icon: scholarIcon()   },
+    { label: 'Instagram',      href: linkMap['Instagram']      ?? '#', icon: instagramIcon() },
+    { label: 'Shabdras',       href: linkMap['Shabdras']       ?? '#', icon: featherIcon()   },
   ];
 
   const intents = [

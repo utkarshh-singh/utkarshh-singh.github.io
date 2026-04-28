@@ -14,19 +14,6 @@
       ]
     },
     {
-      "id": "quantumComputing",
-      "label": "Quantum Computing",
-      "icon": "cpu",
-      "skills": [
-        { "name": "Circuit Design", "level": "expert", "tags": ["core"] },
-        { "name": "Transpilation & Compilation", "level": "expert", "tags": ["hardware"] },
-        { "name": "Noise-Aware Evaluation", "level": "expert", "tags": ["hardware"] },
-        { "name": "Error Suppression & Mitigation", "aliases": ["TREX", "PEC", "ZNE"], "level": "expert", "tags": ["hardware"] },
-        { "name": "Resource Analysis", "aliases": ["shots, depth, qubits"], "level": "expert", "tags": ["hardware"] },
-        { "name": "Quantum Error Correction", "aliases": ["QEC with Qiskit"], "level": "working", "tags": ["research"] }
-      ]
-    },
-    {
       "id": "machineLearning",
       "label": "Machine Learning",
       "icon": "brain",
@@ -40,6 +27,19 @@
       ]
     },
     {
+      "id": "quantumComputing",
+      "label": "Quantum Computing",
+      "icon": "cpu",
+      "skills": [
+        { "name": "Circuit Design", "level": "expert", "tags": ["core"] },
+        { "name": "Transpilation & Compilation", "level": "expert", "tags": ["hardware"] },
+        { "name": "Noise-Aware Evaluation", "level": "expert", "tags": ["hardware"] },
+        { "name": "Error Suppression & Mitigation", "aliases": ["TREX", "PEC", "ZNE"], "level": "expert", "tags": ["hardware"] },
+        { "name": "Resource Analysis", "aliases": ["shots, depth, qubits"], "level": "expert", "tags": ["hardware"] },
+        { "name": "Quantum Error Correction", "aliases": ["QEC with Qiskit"], "level": "working", "tags": ["research"] }
+      ]
+    },
+    {
       "id": "softwareTools",
       "label": "Software & Tools",
       "icon": "code-2",
@@ -49,7 +49,7 @@
         { "name": "PennyLane", "level": "working", "tags": ["quantum"] },
         { "name": "Cirq", "level": "working", "tags": ["quantum"] },
         { "name": "scikit-learn", "level": "expert", "tags": ["ml"] },
-        { "name": "PyTorch", "level": "working", "tags": ["ml"] },
+        { "name": "PyTorch", "level": "expert", "tags": ["ml"] },
         { "name": "Git & GitHub", "level": "expert", "tags": ["core"], "link": "https://github.com/utkarshh-singh" },
         { "name": "Jupyter", "level": "expert", "tags": ["core"] }
       ]

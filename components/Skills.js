@@ -92,33 +92,57 @@ export async function buildSkills() {
 function buildSkillGroups(data) {
   if (!data) return '<p class="error-state">Could not load skills.</p>';
 
-  // Support both flat {categories:[]} and nested structures
   const categories = data.categories ?? data.skillGroups ?? [];
 
   if (!categories.length) {
-    // Fallback: render flat skill list
     const skills = data.skills ?? data.technical ?? [];
-    return `<div class="skill-group">
-      <div class="skill-group__tags">
-        ${skills.map(s => `<span class="tag tag--muted">${s}</span>`).join('')}
-      </div>
+    return `<div class="skill-group__tags">
+      ${skills.map(s => `<span class="tag tag--muted">${s}</span>`).join('')}
     </div>`;
   }
 
-  return categories.map(cat => `
-    <div class="skill-group card card--compact">
-      <h3 class="skill-group__name">
-        ${categoryIcon(cat.label ?? cat.name ?? cat.category)} ${cat.label ?? cat.name ?? cat.category}
-      </h3>
-      <div class="skill-group__tags">
-        ${(cat.skills ?? cat.items ?? []).map(skill => {
-          const name  = typeof skill === 'string' ? skill : skill.name;
-          const level = typeof skill === 'object' ? skill.level : null;
-          return `<span class="tag tag--muted ${level === 'Expert' ? 'tag--expert' : ''}">${name}</span>`;
-        }).join('')}
+  return `
+    <div class="skills-tabs">
+      <!-- Tab Nav -->
+      <div class="skills-tabs__nav" role="tablist">
+        ${categories.map((cat, i) => `
+          <button
+            class="skills-tabs__tab ${i === 0 ? 'is-active' : ''}"
+            role="tab"
+            aria-selected="${i === 0}"
+            aria-controls="skills-panel-${i}"
+            id="skills-tab-${i}"
+            onclick="
+              this.closest('.skills-tabs').querySelectorAll('.skills-tabs__tab').forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected','false'); });
+              this.closest('.skills-tabs').querySelectorAll('.skills-tabs__panel').forEach(p => p.classList.remove('is-active'));
+              this.classList.add('is-active');
+              this.setAttribute('aria-selected','true');
+              document.getElementById('skills-panel-${i}').classList.add('is-active');
+            ">
+            ${cat.label ?? cat.name ?? cat.category}
+          </button>
+        `).join('')}
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="skills-tabs__panels">
+        ${categories.map((cat, i) => `
+          <div class="skills-tabs__panel ${i === 0 ? 'is-active' : ''}"
+               role="tabpanel"
+               id="skills-panel-${i}"
+               aria-labelledby="skills-tab-${i}">
+            <div class="skill-group__tags">
+              ${(cat.skills ?? cat.items ?? []).map(skill => {
+                const name  = typeof skill === 'string' ? skill : skill.name;
+                const level = typeof skill === 'object' ? skill.level : null;
+                return `<span class="tag tag--muted ${level === 'expert' ? 'tag--expert' : ''}">${name}</span>`;
+              }).join('')}
+            </div>
+          </div>
+        `).join('')}
       </div>
     </div>
-  `).join('');
+  `;
 }
 
 /* ─── Certifications ─────────────────────────────────────────*/

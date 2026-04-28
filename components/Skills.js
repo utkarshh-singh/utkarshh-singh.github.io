@@ -108,7 +108,7 @@ function buildSkillGroups(data) {
   return categories.map(cat => `
     <div class="skill-group card card--compact">
       <h3 class="skill-group__name">
-        ${categoryIcon(cat.name ?? cat.category)} ${cat.name ?? cat.category}
+        ${categoryIcon(cat.label ?? cat.name ?? cat.category)} ${cat.label ?? cat.name ?? cat.category}
       </h3>
       <div class="skill-group__tags">
         ${(cat.skills ?? cat.items ?? []).map(skill => {
@@ -162,7 +162,7 @@ function buildTimeline(items, prefix) {
       <div class="timeline-item__dot"></div>
       <div class="timeline-item__content">
         <div class="timeline-item__period">
-          ${formatExpDate(item.startDate)} — ${item.current && !item.endDate ? 'Present' : formatExpDate(item.endDate)}
+          ${item.startDate ? formatExpDate(item.startDate) : (item.startYear ?? '')} — ${item.current && !item.endDate && !item.endYear ? 'Present' : item.endDate ? formatExpDate(item.endDate) : (item.endYear ?? '')}
         </div>
         <h4 class="timeline-item__title">
           ${item.degree ?? item.role ?? item.title ?? ''}

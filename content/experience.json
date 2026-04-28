@@ -89,6 +89,20 @@
         "Supported quantum education and community outreach globally"
       ],
       "displayPriority": 5
+    },
+    {
+      "id": "hallocart-ceo",
+      "role": "CEO and Co-Founder",
+      "organization": "Hallocart.com",
+      "location": "Patna, IN",
+      "startDate": "2015",
+      "endDate": "2017",
+      "current": false,
+      "type": "Startup",
+      "tags": ["Ecommerce", "business strategy", "Entrepreneurship", "community"],
+      "highlights": [
+      ],
+      "displayPriority": 5
     }
   ]
 }

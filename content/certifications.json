@@ -38,7 +38,7 @@
       "issuerShort": "Coursera",
       "year": 2023,
       "type": "specialization",
-      "credentialUrl": "https://www.credly.com/org/coursera/badge/deep-learning-specialization",
+      "credentialUrl": "https://www.credly.com/badges/6acf9377-3851-4a51-a6e2-7b8ef3eede80/public_url",
       "description": "Comprehensive deep learning specialization covering neural architectures, CNNs, RNNs, Transformers, and practical ML workflows.",
       "skills": ["Deep Learning", "TensorFlow", "CNNs", "RNNs", "Transformers"],
       "featured": true,

@@ -14,7 +14,7 @@
      "system" = follows the user's OS setting automatically
    ============================================================= */
 
-export const PALETTE       = "copper";       // Active color palette
+export const PALETTE       = "midnight";       // Active color palette
 export const DEFAULT_MODE  = "system";     // "system" | "light" | "dark"
 export const ANIMATION     = "expressive";    // "none" | "minimal" | "moderate" | "expressive"
 

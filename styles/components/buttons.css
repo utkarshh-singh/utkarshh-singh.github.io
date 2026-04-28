@@ -1,0 +1,117 @@
+/* =============================================================
+   BUTTONS.CSS — Button System
+   
+   Button variants:
+   .btn              → base styles (always combine with a variant)
+   .btn--primary     → filled teal (main CTAs)
+   .btn--secondary   → outlined (secondary actions)
+   .btn--ghost       → transparent with hover fill (tertiary)
+   .btn--sm          → smaller size
+   .btn--lg          → larger size
+   
+   Usage:
+   <a href="..." class="btn btn--primary">View Research</a>
+   <button class="btn btn--secondary btn--sm">See all</button>
+   ============================================================= */
+
+/* ─── Base ───────────────────────────────────────────────────*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background    var(--transition-interactive),
+    color         var(--transition-interactive),
+    border-color  var(--transition-interactive),
+    box-shadow    var(--transition-interactive),
+    transform     var(--transition-interactive);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ─── Primary ────────────────────────────────────────────────*/
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: var(--color-text-inverse);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Secondary ──────────────────────────────────────────────*/
+.btn--secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover {
+  background: var(--color-surface-offset);
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+/* ─── Ghost ──────────────────────────────────────────────────*/
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  background: var(--color-surface-offset);
+  color: var(--color-text);
+}
+
+/* ─── Sizes ──────────────────────────────────────────────────*/
+.btn--sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-base);
+}
+
+/* ─── Icon-only ──────────────────────────────────────────────*/
+.btn--icon {
+  padding: var(--space-2);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+}
+
+/* ─── Arrow icon helper ──────────────────────────────────────*/
+.btn__arrow {
+  transition: transform var(--transition-interactive);
+}
+.btn:hover .btn__arrow {
+  transform: translateX(3px);
+}

@@ -1,0 +1,162 @@
+{
+  "certifications": [
+    {
+      "id": "ibm-certified-qiskit-developer",
+      "name": "IBM Certified Associate Developer — Quantum Computation using Qiskit",
+      "displayName": "IBM Certified Quantum Developer",
+      "issuer": "IBM Professional Certification",
+      "issuerShort": "IBM",
+      "year": 2022,
+      "type": "formal-certification",
+      "credentialUrl": "https://www.credly.com/org/ibm-professional-certification-program/badge/ibm-certified-associate-developer-quantum-computation-using-qiskit-v0-2x",
+      "description": "Formal IBM certification validating ability to use Qiskit to create and execute quantum computing programs on IBM Quantum computers.",
+      "skills": ["Qiskit", "Quantum Computing", "Python", "Quantum Circuits"],
+      "featured": true,
+      "displayPriority": 1,
+      "group": "Quantum Core"
+    },
+    {
+      "id": "foundations-qec",
+      "name": "Foundations of Quantum Error Correction",
+      "displayName": "Foundations of Quantum Error Correction",
+      "issuer": "IBM",
+      "issuerShort": "IBM",
+      "year": 2026,
+      "type": "certificate",
+      "credentialUrl": "https://www.credly.com/org/ibm/badge/foundations-of-quantum-error-correction",
+      "description": "Advanced credential covering quantum error correction principles including the Shor code and advanced code families.",
+      "skills": ["Quantum Error Correction", "Quantum Computing", "Quantum Information"],
+      "featured": true,
+      "displayPriority": 2,
+      "group": "Quantum Core"
+    },
+    {
+      "id": "deep-learning-specialization",
+      "name": "Deep Learning Specialization",
+      "displayName": "Deep Learning Specialization",
+      "issuer": "Coursera",
+      "issuerShort": "Coursera",
+      "year": 2023,
+      "type": "specialization",
+      "credentialUrl": "https://www.credly.com/org/coursera/badge/deep-learning-specialization",
+      "description": "Comprehensive deep learning specialization covering neural architectures, CNNs, RNNs, Transformers, and practical ML workflows.",
+      "skills": ["Deep Learning", "TensorFlow", "CNNs", "RNNs", "Transformers"],
+      "featured": true,
+      "displayPriority": 3,
+      "group": "AI & ML"
+    },
+    {
+      "id": "aws-amazon-braket",
+      "name": "AWS Knowledge: Amazon Braket Training Badge",
+      "displayName": "AWS Knowledge: Amazon Braket",
+      "issuer": "Amazon Web Services",
+      "issuerShort": "AWS",
+      "year": 2024,
+      "type": "certificate",
+      "credentialUrl": "https://www.credly.com/org/amazon-web-services/badge/aws-knowledge-amazon-braket-training-badge",
+      "description": "AWS credential focused on Amazon Braket and cloud-based quantum computing workflows.",
+      "skills": ["Amazon Braket", "AWS", "Cloud Quantum Computing"],
+      "featured": true,
+      "displayPriority": 4,
+      "group": "Quantum Platforms"
+    }
+  ],
+  "badges": [
+    {
+      "id": "qiskit-advocate",
+      "name": "Qiskit Advocate",
+      "issuer": "IBM",
+      "year": 2023,
+      "credentialUrl": "https://www.credly.com/org/ibm/badge/qiskit-advocate",
+      "description": "Recognition for deep Qiskit knowledge and active contribution to the quantum community.",
+      "featured": true,
+      "displayPriority": 1,
+      "group": "Quantum Leadership"
+    },
+    {
+      "id": "qamp-2025",
+      "name": "Qiskit Advocate Mentorship Program 2025 Contributor",
+      "issuer": "IBM",
+      "year": 2026,
+      "credentialUrl": "https://www.credly.com/org/ibm/badge/qiskit-advocate-mentorship-program-2025-contributor",
+      "description": "Recognition for active contribution to QAMP 2025 including collaborative quantum research and delivery.",
+      "featured": true,
+      "displayPriority": 2,
+      "group": "Quantum Leadership"
+    },
+    {
+      "id": "qiskit-fall-fest-mentor-2025",
+      "name": "2025 Qiskit Fall Fest Mentor",
+      "issuer": "IBM",
+      "year": 2025,
+      "credentialUrl": "https://www.credly.com/org/ibm/badge/2025-qiskit-fall-fest-mentor",
+      "description": "Recognition for mentoring participants and supporting an official Qiskit Fall Fest event.",
+      "featured": true,
+      "displayPriority": 3,
+      "group": "Quantum Leadership"
+    },
+    {
+      "id": "ibm-quantum-challenge-2024",
+      "name": "IBM Quantum Challenge 2024 Achievement",
+      "issuer": "IBM",
+      "year": 2024,
+      "credentialUrl": "https://www.credly.com/org/ibm/badge/ibm-quantum-challenge-2024-achievement",
+      "description": "Hands-on achievement using Qiskit 1.0 and utility-scale quantum workflow concepts.",
+      "featured": false,
+      "displayPriority": 7,
+      "group": "Quantum Challenges"
+    }
+  ],
+  "awards": [
+    {
+      "id": "deep-tech-nrc-2024",
+      "name": "Deep Tech Canada NRC Student Award",
+      "organization": "Deep Tech Canada / National Research Council Canada",
+      "year": 2024,
+      "event": "Quantum Days 2024",
+      "description": "Award recognizing contributions to resource-efficient quantum kernel research at Quantum Days 2024.",
+      "featured": true,
+      "displayPriority": 1
+    },
+    {
+      "id": "nrc-inventor-award-2023",
+      "name": "NRC Inventor Fixed Milestone Award",
+      "organization": "National Research Council Canada",
+      "year": 2023,
+      "event": null,
+      "description": "Award recognizing progress in patent-driven quantum machine learning research.",
+      "featured": true,
+      "displayPriority": 2
+    },
+    {
+      "id": "mitacs-gra-2025",
+      "name": "Mitacs Globalink Research Award",
+      "organization": "Mitacs",
+      "year": 2025,
+      "event": null,
+      "description": "Competitive research award supporting international collaboration in quantum machine learning.",
+      "featured": true,
+      "displayPriority": 3
+    },
+    {
+      "id": "mitacs-bsi-2025",
+      "name": "Mitacs Business Strategy Internship",
+      "organization": "Mitacs",
+      "year": 2025,
+      "event": null,
+      "description": "Program bridging deep-tech QML research and commercialization strategy.",
+      "featured": true,
+      "displayPriority": 4
+    },
+    {
+      "id": "poster-award-2025",
+      "name": "Second Best Poster",
+      "organization": "University of Ottawa",
+      "year": 2025,
+      "event": "Celebrating 100 Years of Quantum Science",
+      "description": "Award for research communication quality at uOttawa's centennial quantum science workshop.",
+      "featured": false,
+      "displayPriority": 5
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "experience": [
+    {
+      "id": "postdoc-uottawa",
+      "role": "Postdoctoral Fellow",
+      "organization": "University of Ottawa",
+      "location": "Ottawa, Canada",
+      "startDate": "2026-05",
+      "endDate": null,
+      "current": true,
+      "type": "research",
+      "tags": ["quantum machine learning", "research", "academia"],
+      "highlights": [
+        "Continuing research in hardware-aware quantum machine learning",
+        "Extending work on quantum kernels and reservoir computing",
+        "Collaborating with NRC and industry partners"
+      ],
+      "displayPriority": 1
+    },
+    {
+      "id": "phd-uottawa-nrc",
+      "role": "PhD Researcher",
+      "organization": "University of Ottawa / National Research Council Canada",
+      "location": "Ottawa, Canada",
+      "startDate": "2021",
+      "endDate": "2026-04",
+      "current": false,
+      "type": "research",
+      "tags": ["PhD", "quantum machine learning", "machine learning", "research"],
+      "highlights": [
+        "Thesis: Towards Real-World Quantum Machine Learning",
+        "Developed resource-efficient quantum kernels, QNNs, and QRC frameworks",
+        "3 pending WIPO patent applications",
+        "5 publications in peer-reviewed venues",
+        "NRC Inventor Fixed Milestone Award 2023",
+        "Deep Tech Canada NRC Student Award 2024"
+      ],
+      "displayPriority": 2
+    },
+    {
+      "id": "g2q-computing",
+      "role": "Senior Manager / Consultant",
+      "organization": "G2Q Computing",
+      "location": "Remote",
+      "startDate": "2022-10",
+      "endDate": "2025-04",
+      "current": true,
+      "type": "industry",
+      "tags": ["consulting", "quantum computing", "industry", "startup"],
+      "highlights": [
+        "Applied QML methods to industry-facing use cases",
+        "Supported quantum-readiness strategy for clients",
+        "Contributed to hybrid quantum-classical pipeline development",
+        "Helped with hiring process"
+      ],
+      "displayPriority": 3
+    },
+    {
+      "id": "mitacs-bsi",
+      "role": "Business Strategy Intern",
+      "organization": "Mitacs",
+      "location": "Canada",
+      "startDate": "2025",
+      "endDate": "2025",
+      "current": false,
+      "type": "entrepreneurship",
+      "tags": ["Mitacs", "business strategy", "commercialization", "deep tech"],
+      "highlights": [
+        "Translated deep-tech QML research into business strategy",
+        "Explored commercialization pathways for quantum technologies",
+        "Market validation and startup-oriented thinking"
+      ],
+      "displayPriority": 4
+    },
+    {
+      "id": "qiskit-advocate-mentor",
+      "role": "Qiskit Advocate & Community Mentor",
+      "organization": "IBM Quantum / Qiskit",
+      "location": "Global",
+      "startDate": "2023",
+      "endDate": null,
+      "current": true,
+      "type": "community",
+      "tags": ["IBM", "Qiskit", "mentorship", "community", "open source"],
+      "highlights": [
+        "Qiskit Advocate (July 2022)",
+        "QAMP 2025 Mentor — mentored a quantum research project",
+        "2025 Qiskit Fall Fest Mentor",
+        "Supported quantum education and community outreach globally"
+      ],
+      "displayPriority": 5
+    }
+  ]
+}

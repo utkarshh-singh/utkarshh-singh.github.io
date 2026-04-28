@@ -1,0 +1,76 @@
+{
+  "categories": [
+    {
+      "id": "quantumMachineLearning",
+      "label": "Quantum Machine Learning",
+      "icon": "atom",
+      "skills": [
+        { "name": "Quantum Kernels", "aliases": ["QSVM", "quantum kernel methods"], "level": "expert", "tags": ["research", "consulting", "core"] },
+        { "name": "QNN Architectures", "aliases": ["quantum neural networks", "CFFQNN"], "level": "expert", "tags": ["research", "innovation", "core"] },
+        { "name": "Quantum Reservoir Computing", "aliases": ["QRC"], "level": "expert", "tags": ["research", "time-series", "core"] },
+        { "name": "Feature Maps & Embeddings", "aliases": ["quantum feature maps"], "level": "expert", "tags": ["research", "algorithms"] },
+        { "name": "Near-Term Algorithm Design", "aliases": ["NISQ algorithm design"], "level": "expert", "tags": ["research"] },
+        { "name": "Benchmarking", "aliases": ["QML benchmarking"], "level": "expert", "tags": ["research", "evaluation"] }
+      ]
+    },
+    {
+      "id": "quantumComputing",
+      "label": "Quantum Computing",
+      "icon": "cpu",
+      "skills": [
+        { "name": "Circuit Design", "level": "expert", "tags": ["core"] },
+        { "name": "Transpilation & Compilation", "level": "expert", "tags": ["hardware"] },
+        { "name": "Noise-Aware Evaluation", "level": "expert", "tags": ["hardware"] },
+        { "name": "Error Suppression & Mitigation", "aliases": ["TREX", "PEC", "ZNE"], "level": "expert", "tags": ["hardware"] },
+        { "name": "Resource Analysis", "aliases": ["shots, depth, qubits"], "level": "expert", "tags": ["hardware"] },
+        { "name": "Quantum Error Correction", "aliases": ["QEC with Qiskit"], "level": "working", "tags": ["research"] }
+      ]
+    },
+    {
+      "id": "machineLearning",
+      "label": "Machine Learning",
+      "icon": "brain",
+      "skills": [
+        { "name": "Classification", "level": "expert", "tags": ["ml"] },
+        { "name": "Regression", "level": "expert", "tags": ["ml"] },
+        { "name": "Time-Series Forecasting", "level": "expert", "tags": ["ml"] },
+        { "name": "Classical Baseline Comparison", "level": "expert", "tags": ["evaluation"] },
+        { "name": "Robustness & Failure-Mode Analysis", "level": "expert", "tags": ["evaluation"] },
+        { "name": "System-Level Performance Modeling", "level": "working", "tags": ["evaluation"] }
+      ]
+    },
+    {
+      "id": "softwareTools",
+      "label": "Software & Tools",
+      "icon": "code-2",
+      "skills": [
+        { "name": "Python", "level": "expert", "tags": ["core"] },
+        { "name": "Qiskit", "level": "expert", "tags": ["core", "coretool"] },
+        { "name": "PennyLane", "level": "working", "tags": ["quantum"] },
+        { "name": "Cirq", "level": "working", "tags": ["quantum"] },
+        { "name": "scikit-learn", "level": "expert", "tags": ["ml"] },
+        { "name": "PyTorch", "level": "working", "tags": ["ml"] },
+        { "name": "Git & GitHub", "level": "expert", "tags": ["core"], "link": "https://github.com/utkarshh-singh" },
+        { "name": "Jupyter", "level": "expert", "tags": ["core"] }
+      ]
+    },
+    {
+      "id": "leadership",
+      "label": "Leadership & Communication",
+      "icon": "users",
+      "skills": [
+        { "name": "Technical Lectures", "level": "expert", "tags": ["community"] },
+        { "name": "Workshop Organization", "level": "expert", "tags": ["community"] },
+        { "name": "Community Mentorship", "level": "expert", "tags": ["community"] },
+        { "name": "Stakeholder Engagement", "level": "expert", "tags": ["consulting"] },
+        { "name": "Cross-Team Collaboration", "level": "expert", "tags": ["research"] }
+      ]
+    }
+  ],
+  "highlightSkills": ["Quantum Kernels", "QNN Architectures", "Quantum Reservoir Computing", "Qiskit", "Python"],
+  "filterGroups": {
+    "researcherView": ["quantumMachineLearning", "quantumComputing", "machineLearning"],
+    "recruiterView": ["softwareTools", "machineLearning", "leadership"],
+    "clientView": ["quantumMachineLearning", "leadership", "softwareTools"]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "_comment": "Navigation config. To hide a page: set visible to false. To reorder: change the array order.",
+  "items": [
+    { "id": "home",     "label": "Home",     "href": "./index.html",    "visible": false,  "icon": "home" },
+    { "id": "contact",  "label": "Contact",   "href": "./contact.html",  "visible": false,  "icon": "mail" },
+    { "id": "research", "label": "Research",  "href": "./research.html", "visible": true,  "icon": "flask-conical" },
+    { "id": "projects", "label": "Projects",  "href": "./projects.html", "visible": true,  "icon": "folder-open" },
+    { "id": "patents",  "label": "Patents",   "href": "./patents.html",  "visible": true,  "icon": "shield-check" },
+    { "id": "skills",   "label": "Skills",    "href": "./skills.html",   "visible": true,  "icon": "cpu" },
+    { "id": "talks",    "label": "Talks",     "href": "./talks.html",    "visible": true,  "icon": "mic-2" },
+    { "id": "services", "label": "Services",  "href": "./services.html", "visible": true,  "icon": "briefcase" }
+  ]
+}

@@ -1,0 +1,324 @@
+/* =============================================================
+   THEME.CSS — Color Palettes & Light/Dark Mode
+   
+   HOW TO SWITCH THEMES:
+   Change the active palette in config/theme.config.js:
+     export const THEME = "teal";   // → "midnight" | "sage" | "slate" | "copper"
+   
+   Then in each HTML file's <body>, the JS will set:
+     <html data-palette="teal" data-theme="light">
+   
+   HOW LIGHT/DARK WORKS:
+   - Default: system preference (prefers-color-scheme)
+   - Manual toggle: sets data-theme="light" or "dark" on <html>
+   - Pattern: :root sets light mode, [data-theme="dark"] overrides
+   ============================================================= */
+
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 1: TEAL (DEFAULT)
+   Warm beige surfaces + deep teal accent
+   Best for: research, science, professional trust
+   ═══════════════════════════════════════════════════════════ */
+:root,
+[data-palette="teal"],
+[data-theme="light"] {
+  /* Surfaces — layered from darkest to lightest */
+  --color-bg:               #f7f6f2;
+  --color-surface:          #f9f8f5;
+  --color-surface-2:        #fbfbf9;
+  --color-surface-offset:   #f0ede8;
+  --color-divider:          #dcd9d5;
+  --color-border:           oklch(from #28251d l c h / 0.12);
+
+  /* Text — three levels */
+  --color-text:             #1e1c17;
+  --color-text-muted:       #706f6a;
+  --color-text-faint:       #b0afa9;
+  --color-text-inverse:     #f9f8f4;
+
+  /* Primary Accent — Deep Teal */
+  --color-primary:          #01696f;
+  --color-primary-hover:    #0c4e54;
+  --color-primary-active:   #0f3638;
+  --color-primary-subtle:   #e0eeec;
+
+  /* Shadows — warm-tinted to match beige surfaces */
+  --shadow-sm:  0 1px 2px oklch(0.2 0.01 80 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0.2 0.01 80 / 0.09);
+  --shadow-lg:  0 12px 32px oklch(0.2 0.01 80 / 0.13);
+  --shadow-xl:  0 24px 48px oklch(0.2 0.01 80 / 0.16);
+}
+
+/* TEAL — Dark Mode */
+[data-palette="teal"][data-theme="dark"],
+[data-theme="dark"] {
+  --color-bg:               #1e1c19;
+  --color-surface:          #252320;
+  --color-surface-2:        #2c2a27;
+  --color-surface-offset:   #312f2b;
+  --color-divider:          #3a3835;
+  --color-border:           oklch(from #cdccca l c h / 0.10);
+
+  --color-text:             #d4d3d0;
+  --color-text-muted:       #7a7977;
+  --color-text-faint:       #504f4d;
+  --color-text-inverse:     #1e1c17;
+
+  --color-primary:          #4fa3ad;
+  --color-primary-hover:    #68bcc5;
+  --color-primary-active:   #82d4de;
+  --color-primary-subtle:   #1e3436;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.20);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.32);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.44);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.52);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 2: MIDNIGHT
+   Dark charcoal surfaces + electric indigo accent
+   Best for: dramatic, technical, dark-first feel
+   ═══════════════════════════════════════════════════════════ */
+[data-palette="midnight"],
+[data-palette="midnight"][data-theme="light"] {
+  --color-bg:               #f5f5f7;
+  --color-surface:          #f8f8fa;
+  --color-surface-2:        #ffffff;
+  --color-surface-offset:   #ebebef;
+  --color-divider:          #d8d8de;
+  --color-border:           oklch(from #1a1a2e l c h / 0.12);
+
+  --color-text:             #1a1a2e;
+  --color-text-muted:       #6b6b80;
+  --color-text-faint:       #aaaabc;
+  --color-text-inverse:     #f8f8fa;
+
+  --color-primary:          #4f46e5;
+  --color-primary-hover:    #3730a3;
+  --color-primary-active:   #1e1b6e;
+  --color-primary-subtle:   #e0e7ff;
+
+  --shadow-sm:  0 1px 2px oklch(0.15 0.05 280 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0.15 0.05 280 / 0.09);
+  --shadow-lg:  0 12px 32px oklch(0.15 0.05 280 / 0.13);
+  --shadow-xl:  0 24px 48px oklch(0.15 0.05 280 / 0.16);
+}
+
+[data-palette="midnight"][data-theme="dark"] {
+  --color-bg:               #0d0d14;
+  --color-surface:          #13131e;
+  --color-surface-2:        #1a1a28;
+  --color-surface-offset:   #1f1f30;
+  --color-divider:          #28283c;
+  --color-border:           oklch(from #c8c8e0 l c h / 0.10);
+
+  --color-text:             #c8c8e0;
+  --color-text-muted:       #7070a0;
+  --color-text-faint:       #404060;
+  --color-text-inverse:     #0d0d14;
+
+  --color-primary:          #818cf8;
+  --color-primary-hover:    #a5b4fc;
+  --color-primary-active:   #c7d2fe;
+  --color-primary-subtle:   #1e1b4b;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.25);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.40);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.55);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.65);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 3: SAGE
+   Warm stone surfaces + deep forest green accent
+   Best for: calm authority, sustainability focus, balance
+   ═══════════════════════════════════════════════════════════ */
+[data-palette="sage"],
+[data-palette="sage"][data-theme="light"] {
+  --color-bg:               #f4f4f0;
+  --color-surface:          #f7f7f3;
+  --color-surface-2:        #fafaff;
+  --color-surface-offset:   #ebebе6;
+  --color-divider:          #d4d4ce;
+  --color-border:           oklch(from #2d2d24 l c h / 0.12);
+
+  --color-text:             #1f2117;
+  --color-text-muted:       #666b5c;
+  --color-text-faint:       #a8ad9e;
+  --color-text-inverse:     #f7f7f3;
+
+  --color-primary:          #2d6a4f;
+  --color-primary-hover:    #1b4332;
+  --color-primary-active:   #0a2e1f;
+  --color-primary-subtle:   #d8f3dc;
+
+  --shadow-sm:  0 1px 2px oklch(0.2 0.02 130 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0.2 0.02 130 / 0.09);
+  --shadow-lg:  0 12px 32px oklch(0.2 0.02 130 / 0.13);
+  --shadow-xl:  0 24px 48px oklch(0.2 0.02 130 / 0.16);
+}
+
+[data-palette="sage"][data-theme="dark"] {
+  --color-bg:               #0f1209;
+  --color-surface:          #151910;
+  --color-surface-2:        #1c2016;
+  --color-surface-offset:   #21261b;
+  --color-divider:          #2a3022;
+  --color-border:           oklch(from #c8d4b8 l c h / 0.10);
+
+  --color-text:             #c8d4b8;
+  --color-text-muted:       #6e7a60;
+  --color-text-faint:       #3d4535;
+  --color-text-inverse:     #0f1209;
+
+  --color-primary:          #52b788;
+  --color-primary-hover:    #74c69d;
+  --color-primary-active:   #95d5b2;
+  --color-primary-subtle:   #1b3a2a;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.22);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.36);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.50);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.60);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 4: SLATE
+   Cool gray surfaces + steel blue accent
+   Best for: corporate, technical documentation, clean
+   ═══════════════════════════════════════════════════════════ */
+[data-palette="slate"],
+[data-palette="slate"][data-theme="light"] {
+  --color-bg:               #f3f4f6;
+  --color-surface:          #f8f9fa;
+  --color-surface-2:        #ffffff;
+  --color-surface-offset:   #e8eaed;
+  --color-divider:          #d1d5db;
+  --color-border:           oklch(from #1f2937 l c h / 0.12);
+
+  --color-text:             #111827;
+  --color-text-muted:       #6b7280;
+  --color-text-faint:       #9ca3af;
+  --color-text-inverse:     #f9fafb;
+
+  --color-primary:          #1d4ed8;
+  --color-primary-hover:    #1e40af;
+  --color-primary-active:   #1e3a8a;
+  --color-primary-subtle:   #dbeafe;
+
+  --shadow-sm:  0 1px 2px oklch(0.15 0.01 240 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0.15 0.01 240 / 0.09);
+  --shadow-lg:  0 12px 32px oklch(0.15 0.01 240 / 0.13);
+  --shadow-xl:  0 24px 48px oklch(0.15 0.01 240 / 0.16);
+}
+
+[data-palette="slate"][data-theme="dark"] {
+  --color-bg:               #0b0f17;
+  --color-surface:          #111827;
+  --color-surface-2:        #1f2937;
+  --color-surface-offset:   #243044;
+  --color-divider:          #2d3748;
+  --color-border:           oklch(from #cbd5e1 l c h / 0.10);
+
+  --color-text:             #cbd5e1;
+  --color-text-muted:       #64748b;
+  --color-text-faint:       #334155;
+  --color-text-inverse:     #0b0f17;
+
+  --color-primary:          #60a5fa;
+  --color-primary-hover:    #93c5fd;
+  --color-primary-active:   #bfdbfe;
+  --color-primary-subtle:   #1e3a5f;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.24);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.38);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.52);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.62);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE 5: COPPER
+   Warm cream surfaces + burnished copper accent
+   Best for: entrepreneurial, founder-facing, warm authority
+   ═══════════════════════════════════════════════════════════ */
+[data-palette="copper"],
+[data-palette="copper"][data-theme="light"] {
+  --color-bg:               #faf7f2;
+  --color-surface:          #fdf9f4;
+  --color-surface-2:        #fffcf8;
+  --color-surface-offset:   #f0ebe1;
+  --color-divider:          #ddd6ca;
+  --color-border:           oklch(from #2c1a0a l c h / 0.12);
+
+  --color-text:             #1a0f04;
+  --color-text-muted:       #7a6455;
+  --color-text-faint:       #c0aa95;
+  --color-text-inverse:     #fdf9f4;
+
+  --color-primary:          #b45309;
+  --color-primary-hover:    #92400e;
+  --color-primary-active:   #6b2d0a;
+  --color-primary-subtle:   #fef3c7;
+
+  --shadow-sm:  0 1px 2px oklch(0.2 0.04 60 / 0.06);
+  --shadow-md:  0 4px 12px oklch(0.2 0.04 60 / 0.09);
+  --shadow-lg:  0 12px 32px oklch(0.2 0.04 60 / 0.13);
+  --shadow-xl:  0 24px 48px oklch(0.2 0.04 60 / 0.16);
+}
+
+[data-palette="copper"][data-theme="dark"] {
+  --color-bg:               #130b02;
+  --color-surface:          #1c1108;
+  --color-surface-2:        #24180f;
+  --color-surface-offset:   #2c1f14;
+  --color-divider:          #3a2a1c;
+  --color-border:           oklch(from #d4b896 l c h / 0.10);
+
+  --color-text:             #d4b896;
+  --color-text-muted:       #7a5e42;
+  --color-text-faint:       #4a3520;
+  --color-text-inverse:     #130b02;
+
+  --color-primary:          #f59e0b;
+  --color-primary-hover:    #fbbf24;
+  --color-primary-active:   #fcd34d;
+  --color-primary-subtle:   #3d2507;
+
+  --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.22);
+  --shadow-md:  0 4px 12px oklch(0 0 0 / 0.36);
+  --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.50);
+  --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.60);
+}
+
+
+/* ─── System preference fallback ─────────────────────────────
+   If the user has never toggled manually, respect OS setting.
+   ──────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg:               #131211;
+    --color-surface:          #1a1917;
+    --color-surface-2:        #201f1d;
+    --color-surface-offset:   #252320;
+    --color-divider:          #2e2c29;
+    --color-border:           oklch(from #cdccca l c h / 0.10);
+    --color-text:             #d4d3d0;
+    --color-text-muted:       #7a7977;
+    --color-text-faint:       #504f4d;
+    --color-text-inverse:     #1e1c17;
+    --color-primary:          #4fa3ad;
+    --color-primary-hover:    #68bcc5;
+    --color-primary-active:   #82d4de;
+    --color-primary-subtle:   #1e3436;
+    --shadow-sm:  0 1px 2px oklch(0 0 0 / 0.20);
+    --shadow-md:  0 4px 12px oklch(0 0 0 / 0.32);
+    --shadow-lg:  0 12px 32px oklch(0 0 0 / 0.44);
+    --shadow-xl:  0 24px 48px oklch(0 0 0 / 0.52);
+  }
+}

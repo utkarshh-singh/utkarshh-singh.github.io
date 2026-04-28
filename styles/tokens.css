@@ -1,0 +1,115 @@
+/* =============================================================
+   TOKENS.CSS — Design Tokens
+   The single source of truth for ALL visual values.
+   
+   HOW TO USE:
+   - Never hardcode colors, sizes, or spacing in component CSS
+   - Always reference a token: color: var(--color-text)
+   - To change the whole site's feel: edit values here only
+   ============================================================= */
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────────────
+   Fonts are loaded in each HTML file's <head>.
+   --font-display: Used for headings (h1–h3, hero text)
+   --font-body:    Used for everything else (paragraphs, nav, buttons)
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --font-display: 'Zodiak', 'Georgia', serif;
+  --font-body:    'Satoshi', 'Inter', sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─── TYPE SCALE (fluid — scales smoothly with viewport) ────
+   Usage: font-size: var(--text-base);
+   
+   --text-xs    → tiny labels, badges, metadata (12px floor)
+   --text-sm    → buttons, nav links (14–16px)
+   --text-base  → all body copy (16–18px) ← DEFAULT
+   --text-lg    → section subheadings (18–24px)
+   --text-xl    → section headings (24–36px)
+   --text-2xl   → page titles, hero subtitle (32–56px)
+   --text-3xl   → hero heading (40–80px)
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+}
+
+/* ─── SPACING SCALE (4px base unit) ─────────────────────────
+   Every margin, padding, gap must use one of these tokens.
+   
+   --space-1  →  4px   (icon gaps, tight internal padding)
+   --space-2  →  8px   (badge padding, small gaps)
+   --space-4  → 16px   (default component padding)
+   --space-8  → 32px   (card padding, form gaps)
+   --space-16 → 64px   (section spacing)
+   --space-24 → 96px   (large section spacing)
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+}
+
+/* ─── BORDER RADIUS ──────────────────────────────────────────
+   Match radius to element size:
+   - sm  → inputs, small buttons, tags
+   - md  → cards, medium components  
+   - lg  → large cards, modals
+   - xl  → hero cards, large panels
+   - full→ pills, circular avatars
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --radius-sm:   0.25rem;   /*  4px */
+  --radius-md:   0.5rem;    /*  8px */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-full: 9999px;
+}
+
+/* ─── TRANSITIONS ────────────────────────────────────────────
+   Use these for hover/focus states. Never use raw ms values.
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --transition-fast:        120ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow:        320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── CONTENT WIDTH CONTAINERS ───────────────────────────────
+   Use these for max-width on page sections.
+   
+   --content-narrow  → prose text, forms (640px)
+   --content-default → most page content (960px)
+   --content-wide    → full layouts (1200px)
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --content-narrow:  640px;
+  --content-default: 1140px;
+  --content-wide:    1200px;
+}
+
+/* ─── LAYOUT ─────────────────────────────────────────────────
+   Header height is referenced by all pages for offset spacing.
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --header-height: 4rem;   /* 64px — used for scroll-padding-top */
+  --nav-z:         100;
+  --overlay-z:     200;
+}

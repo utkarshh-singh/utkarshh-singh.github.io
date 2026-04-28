@@ -1,0 +1,146 @@
+{
+  "publications": [
+    {
+      "id": "rqfmqrc2026",
+      "title": "Recurrent Quantum Feature Maps for Reservoir Computing",
+      "shortTitle": "QRC",
+      "authors": [
+        "Utkarsh Singh",
+        "et al."
+      ],
+      "year": 2026,
+      "status": "preprint",
+      "venue": "arXiv",
+      "tags": [
+        "quantum reservoir computing",
+        "QRC",
+        "time-series"
+      ],
+      "abstract": "Introduces a quantum reservoir computing framework for time-series forecasting using hardware-aware feature maps.",
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2604.03469",
+        "arxiv": "2604.03469",
+        "pdf": null
+      },
+      "relatedPatent": "patentrqfmqrc",
+      "featured": true,
+      "displayPriority": 1,
+      "doiUrl": "https://doi.org/10.48550/arXiv.2604.03469",
+      "bibtex": "@article{singh2026qrc,\n  title={Recurrent Quantum Feature Maps for Reservoir Computing},\n  author={Singh, Utkarsh},\n  year={2026}\n}"
+    },
+    {
+      "id": "resourcekernel2025",
+      "title": "A Resource-Efficient Quantum Kernel",
+      "shortTitle": "Resource-Efficient Quantum Kernel",
+      "authors": [
+        "Utkarsh Singh",
+        "et al."
+      ],
+      "year": 2025,
+      "status": "preprint",
+      "venue": "arXiv",
+      "tags": [
+        "quantum kernels",
+        "QSVM",
+        "resource-efficient",
+        "classification"
+      ],
+      "abstract": "Proposes a quantum kernel method that reduces qubit and gate requirements while maintaining classification performance on near-term hardware.",
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2507.03689",
+        "arxiv": "2507.03689",
+        "pdf": null
+      },
+      "relatedPatent": "patentresourcekernel",
+      "award": "Deep Tech Canada NRC Student Award 2024",
+      "featured": true,
+      "displayPriority": 2,
+      "doiUrl": "https://arxiv.org/abs/2507.03689",
+      "bibtex": "@article{singh2025qkernel,\n  title={A Resource-Efficient Quantum Kernel},\n  author={Singh, Utkarsh},\n  year={2025}\n}"
+    },
+    {
+      "id": "cffqnn2024",
+      "title": "Coherent Feed-Forward Quantum Neural Network",
+      "shortTitle": "CFFQNN",
+      "authors": [
+        "Utkarsh Singh",
+        "et al."
+      ],
+      "year": 2024,
+      "status": "published",
+      "venue": "Quantum Machine Intelligence",
+      "tags": [
+        "QNN",
+        "quantum neural networks",
+        "coherent",
+        "architecture"
+      ],
+      "abstract": "Introduces a novel coherent feed-forward quantum neural network architecture for classification tasks.",
+      "links": {
+        "doi": "https://doi.org/10.1007/s42484-024-00222-8",
+        "arxiv": "2402.00653",
+        "pdf": null
+      },
+      "relatedPatent": "patentcffqnn",
+      "featured": true,
+      "displayPriority": 3,
+      "doiUrl": "https://doi.org/10.1007/s42484-024-00222-8",
+      "bibtex": "@article{singh2024qnn,\n  title={Coherent Feed-Forward Quantum Neural Network},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+    },
+    {
+      "id": "mofhydrogen2024",
+      "title": "Seeking Metal-Organic Frameworks for Hydrogen Storage Using Classical and Quantum Active Learning",
+      "shortTitle": "MOF Hydrogen Storage QML",
+      "authors": [
+        "MP Lourenço", "R Shukla", "D Gaur", "U Singh", "D Salahub", "M Naseri",
+        "et al."
+      ],
+      "year": 2024,
+      "status": "published",
+      "venue": "RSC / Physical Chemistry Chemical Physics",
+      "tags": [
+        "materials discovery",
+        "hydrogen storage",
+        "active learning",
+        "sustainability"
+      ],
+      "abstract": "Applies classical and quantum active learning to accelerate the discovery of metal-organic frameworks suitable for hydrogen storage.",
+      "links": {
+        "doi": "https://doi.org/10.1039/D5CP02747K",
+        "arxiv": null,
+        "pdf": null
+      },
+      "featured": false,
+      "displayPriority": 4,
+      "doiUrl": "https://doi.org/10.1039/D5CP02747K",
+      "bibtex": "@article{singh2024mof,\n  title={Seeking Metal-Organic Frameworks for Hydrogen Storage Using Quantum ML},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+    },
+    {
+      "id": "localqkernels2024",
+      "title": "Local and Multi-Scale Strategies to Mitigate Exponential Concentration in Quantum Kernels",
+      "shortTitle": "Quantum Kernel Concentration",
+      "authors": [
+        "C Zendejas-Morales", "D Saikia", "U Singh"
+      ],
+      "year": 2026,
+      "status": "preprint",
+      "venue": "arXiv",
+      "tags": [
+        "quantum kernels",
+        "barren plateau",
+        "concentration",
+        "mitigation"
+      ],
+      "abstract": "Studies local and multi-scale strategies to address the exponential concentration problem in quantum kernel methods.",
+      "links": {
+        "doi": "https://doi.org/10.48550/arXiv.2602.16097",
+        "arxiv": "2602.16097",
+        "pdf": null
+      },
+      "featured": false,
+      "displayPriority": 5,
+      "doiUrl": "https://doi.org/10.48550/arXiv.2602.16097",
+      "bibtex": "@article{singh2024barren,\n  title={Local and Multi-Scale Strategies to Mitigate Exponential Concentration},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "fullName": "Utkarsh Singh",
+  "firstName": "Utkarsh",
+  "lastName": "Singh",
+  "displayName": "Utkarsh Singh",
+  "primaryTitle": "Postdoctoral Fellow in Quantum Machine Learning",
+  "tagline": "Researcher. Engineer. Builder.",
+  "subTagline": "Building practical quantum machine learning.",
+  "bio": {
+    "short": "Utkarsh Singh is a quantum machine learning researcher and engineer working on practical, hardware-aware quantum algorithms, with strengths in quantum kernels, QNNs, and quantum reservoir computing.",
+    "medium": "Utkarsh Singh works at the intersection of quantum computing, machine learning, and applied AI. His work focuses on making quantum machine learning more realistic for deployment by improving data encoding, reducing resource requirements, and benchmarking algorithms under hardware constraints. He has worked across academia, public research, and industry, and has contributed to patents, publications, mentoring, and technical community building.",
+    "long": "Utkarsh Singh is a researcher in quantum machine learning with experience spanning academic research, national-lab collaboration, and industry-facing development. His work centers on hardware-aware and resource-efficient quantum algorithms — especially quantum kernels, coherent quantum neural network architectures, and quantum reservoir computing. He has built benchmarking pipelines, studied noise effects on near-term hardware, contributed to software-oriented QML initiatives, and supported collaborations in materials discovery, sustainability, and quantum chemistry workflows."
+  },
+  "location": {
+    "city": "Ottawa",
+    "country": "Canada",
+    "display": "Ottawa, Canada"
+  },
+  "currentStatus": {
+    "role": "Postdoctoral Fellow",
+    "institution": "University of Ottawa",
+    "phdStatus": "Completed",
+    "phdYear": "2026"
+  },
+  "positioning": [
+    "Practical quantum machine learning",
+    "Resource-efficient data encoding",
+    "Research with commercialization potential",
+    "Applied quantum AI for real-world systems"
+  ],
+  "avatar": "./assets/images/avatar.png",
+  "ogImage": "./assets/images/og-image.jpg"
+}

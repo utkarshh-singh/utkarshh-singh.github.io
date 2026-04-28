@@ -1,0 +1,169 @@
+/* =============================================================
+   BASE.CSS — Global Reset & Defaults
+   
+   This file:
+   - Resets browser inconsistencies
+   - Sets default font, color, background from tokens
+   - Sets scroll behavior, selection color, focus rings
+   - DO NOT put component-specific styles here
+   ============================================================= */
+
+/* ─── Box Model Reset ────────────────────────────────────────*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Root Defaults ──────────────────────────────────────────*/
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  hanging-punctuation: first last;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body, sans-serif);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-slow);
+}
+
+/* ─── Media Elements ─────────────────────────────────────────*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── Typography Defaults ────────────────────────────────────*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display, serif);
+  font-weight: 600;
+  line-height: 1.15;
+  text-wrap: balance;
+  color: var(--color-text);
+}
+
+p, li, figcaption, blockquote {
+  text-wrap: pretty;
+  max-width: 72ch;
+}
+
+/* ─── Lists ──────────────────────────────────────────────────*/
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* ─── Form Elements ──────────────────────────────────────────*/
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ─── Interactive Elements ───────────────────────────────────*/
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition:
+    color var(--transition-interactive),
+    opacity var(--transition-interactive);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition:
+    color var(--transition-interactive),
+    background var(--transition-interactive),
+    box-shadow var(--transition-interactive),
+    transform var(--transition-interactive);
+}
+
+/* ─── Focus Ring (accessibility) ─────────────────────────────
+   Visible only when using keyboard navigation (not mouse click)
+   ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Text Selection ─────────────────────────────────────────*/
+::selection {
+  background: color-mix(in oklch, var(--color-primary) 20%, transparent);
+  color: var(--color-text);
+}
+
+/* ─── Tables ─────────────────────────────────────────────────*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* ─── Screen Reader Only ─────────────────────────────────────
+   Visually hidden but accessible to screen readers.
+   Use for: icon-only buttons, skip links, aria labels
+   ──────────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ─── Skip Link ──────────────────────────────────────────────
+   Keyboard users can skip to main content immediately.
+   ──────────────────────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  z-index: 999;
+  transform: translateY(-200%);
+  transition: transform var(--transition-fast);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────
+   Respects user's OS "Reduce Motion" accessibility setting.
+   All animations are disabled when this is active.
+   ──────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

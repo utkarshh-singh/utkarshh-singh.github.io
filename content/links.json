@@ -1,0 +1,52 @@
+{
+  "social": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/utkarsh-singhh",
+      "category": "professional",
+      "priority": 1,
+      "showInHeader": true,
+      "icon": "linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/utkarshh-singh",
+      "category": "technical",
+      "priority": 1,
+      "showInHeader": true,
+      "icon": "github"
+    },
+    {
+      "platform": "Google Scholar",
+      "url": "https://scholar.google.com/citations?view_op=list_works&hl=en&user=zWTAuq0AAAAJ",
+      "category": "research",
+      "priority": 1,
+      "showInHeader": true,
+      "icon": "graduation-cap"
+    },
+    {
+      "platform": "Credly",
+      "url": "https://www.credly.com/users/utkarsh-singh.0a82c607/badges",
+      "category": "credentials",
+      "priority": 2,
+      "showInHeader": false,
+      "icon": "award"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/utkarsh.singh95",
+      "category": "personal",
+      "priority": 2,
+      "showInHeader": false,
+      "icon": "instagram"
+    },
+    {
+      "platform": "Shabdras",
+      "url": "https://www.shabdras.com",
+      "category": "creative",
+      "priority": 2,
+      "showInHeader": false,
+      "icon": "feather"
+    }
+  ]
+}

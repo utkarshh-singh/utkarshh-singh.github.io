@@ -1,0 +1,40 @@
+{
+  "education": [
+    {
+      "id": "phd-uottawa",
+      "degree": "PhD in Physics",
+      "specialization": "Quantum Machine Learning",
+      "institution": "University of Ottawa",
+      "location": "Ottawa, Canada",
+      "startYear": 2021,
+      "endYear": 2026,
+      "status": "completed",
+      "thesis": "Towards Real-World Quantum Machine Learning",
+      "displayPriority": 1
+    },
+    {
+      "id": "msc-cuj",
+      "degree": "MSc in Physics",
+      "specialization": null,
+      "institution": "Central University of Jharkhand",
+      "location": "Ranchi, India",
+      "startYear": 2017,
+      "endYear": 2019,
+      "status": "completed",
+      "thesis": null,
+      "displayPriority": 2
+    },
+    {
+      "id": "bsc-patna",
+      "degree": "BSc in Physics",
+      "specialization": null,
+      "institution": "Patna Science College",
+      "location": "Patna, India",
+      "startYear": 2012,
+      "endYear": 2015,
+      "status": "completed",
+      "thesis": null,
+      "displayPriority": 3
+    }
+  ]
+}

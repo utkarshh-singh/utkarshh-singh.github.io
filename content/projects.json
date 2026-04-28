@@ -1,0 +1,79 @@
+{
+  "projects": [
+    {
+      "id": "resource-qrc",
+      "title": "Quantum Reservoir Computing",
+      "category": "research",
+      "tags": ["QRC", "time-series", "resource-efficient", "hardware-aware"],
+      "description": "Designed and implemented a quantum reservoir computing framework using resource-efficient feature maps for time-series forecasting on near-term hardware. Led to a publication and a pending WIPO patent.",
+      "outcome": "Publication (RSC) + WIPO Patent Application",
+      "relatedPublication": "rqfmqrc2026",
+      "relatedPatent": "patentrqfmqrc",
+      "featured": true,
+      "displayPriority": 1
+    },
+    {
+      "id": "resource-quantum-kernel",
+      "title": "A Resource-Efficient Quantum Kernel",
+      "category": "research",
+      "tags": ["quantum kernels", "classification", "QSVM", "resource-efficient"],
+      "description": "Developed a quantum kernel method that reduces qubit and gate requirements while maintaining classification accuracy. Recognized with the NRC/Deep Tech Canada Student Award.",
+      "outcome": "Publication (Springer) + WIPO Patent + NRC Award",
+      "relatedPublication": "resourcekernel2025",
+      "relatedPatent": "patentresourcekernel",
+      "featured": true,
+      "displayPriority": 2
+    },
+    {
+      "id": "cffqnn-project",
+      "title": "Coherent Feed-Forward Quantum Neural Network",
+      "category": "research",
+      "tags": ["QNN", "architecture", "coherent", "classification"],
+      "description": "Designed a novel coherent QNN architecture using feed-forward quantum circuits, enabling improved classification on near-term hardware.",
+      "outcome": "Publication (Springer/arXiv) + WIPO Patent",
+      "relatedPublication": "cffqnn2024",
+      "relatedPatent": "patentcffqnn",
+      "featured": true,
+      "displayPriority": 3
+    },
+    {
+      "id": "mof-discovery",
+      "title": "QML for Materials Discovery",
+      "category": "applied-research",
+      "tags": ["materials discovery", "hydrogen storage", "active learning", "sustainability"],
+      "description": "Applied classical and quantum active learning to accelerate discovery of metal-organic frameworks suitable for hydrogen storage applications.",
+      "outcome": "Publication (RSC)",
+      "relatedPublication": "mofhydrogen2024",
+      "featured": false,
+      "displayPriority": 4
+    },
+    {
+      "id": "qml-benchmarking",
+      "title": "QML Hardware Benchmarking Pipelines",
+      "category": "engineering",
+      "tags": ["benchmarking", "hardware", "noise", "evaluation"],
+      "description": "Built benchmarking pipelines for evaluating QML algorithms under realistic hardware noise conditions, comparing against classical baselines.",
+      "outcome": "Internal research infrastructure at NRC / uOttawa",
+      "featured": false,
+      "displayPriority": 5
+    }
+  ],
+  "hackathons": [
+    {
+      "id": "ibm-quantum-challenge-2024",
+      "name": "IBM Quantum Challenge 2024",
+      "organizer": "IBM",
+      "year": 2024,
+      "achievement": "Achievement Badge",
+      "focus": "Qiskit 1.0, utility-scale quantum workflows"
+    },
+    {
+      "id": "ibm-quantum-challenge-fall-2022",
+      "name": "IBM Quantum Challenge Fall 2022",
+      "organizer": "IBM",
+      "year": 2022,
+      "achievement": "Advanced Achievement Badge",
+      "focus": "Quantum kernels, QML, Qiskit Runtime"
+    }
+  ]
+}

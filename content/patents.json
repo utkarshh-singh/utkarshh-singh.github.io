@@ -1,0 +1,49 @@
+{
+  "patents": [
+    {
+      "id": "patentrqfmqrc",
+      "title": "Recurrent Quantum Feature Maps for Reservoir Computing",
+      "shortTitle": "Quantum Reservoir Computing Patent",
+      "inventors": ["Utkarsh Singh", "et al."],
+      "filingYear": 2026,
+      "status": "filled",
+      "organization": "WIPO",
+      "tags": ["quantum reservoir computing", "feature map", "time-series", "resource-efficient"],
+      "summary": "A patent covering a quantum reservoir computing framework using a recurrent feature map circuit, enabling practical time-series modeling on near-term quantum hardware.",
+      "relatedPublication": "rqfmqrc2026",
+      "publicationUrl": null,
+      "featured": true,
+      "displayPriority": 1
+    },
+    {
+      "id": "patentcffqnn",
+      "title": "Coherent Feed-Forward Quantum Neural Network",
+      "shortTitle": "Quantum Neural Network Patent",
+      "inventors": ["Utkarsh Singh", "et al."],
+      "filingYear": 2025,
+      "status": "pending",
+      "organization": "WIPO",
+      "tags": ["QNN", "quantum neural network", "coherent", "architecture"],
+      "summary": "A patent on the coherent feed-forward quantum neural network (CFFQNN) architecture, introducing a novel design for quantum classification circuits.",
+      "relatedPublication": "cffqnn2024",
+      "publicationUrl": null,
+      "featured": true,
+      "displayPriority": 2
+    },
+    {
+      "id": "patentresourcekernel",
+      "title": "Resource efficient quantum kernel with iterative appending for support vector machines",
+      "shortTitle": "Quantum Kernel Patent",
+      "inventors": ["Utkarsh Singh", "et al."],
+      "filingYear": 2025,
+      "status": "pending",
+      "organization": "WIPO",
+      "tags": ["quantum kernel", "QSVM", "resource-efficient", "classification"],
+      "summary": "A patent covering a quantum kernel method optimized for reduced qubit and gate requirements, making quantum-enhanced classification viable on near-term hardware.",
+      "relatedPublication": "resourcekernel2025",
+      "publicationUrl": null,
+      "featured": true,
+      "displayPriority": 3
+    }
+  ]
+}

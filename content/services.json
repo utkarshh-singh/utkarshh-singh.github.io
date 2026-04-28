@@ -1,0 +1,40 @@
+{
+  "services": [
+    {
+      "id": "qml-consulting",
+      "name": "Quantum Machine Learning Consulting",
+      "category": "consulting",
+      "tagline": "Technical consulting around practical QML methods and strategy.",
+      "description": "Advisory and implementation support for organizations exploring quantum machine learning — including model selection, benchmarking, feasibility analysis, and quantum-readiness strategy.",
+      "targetClients": ["startups", "R&D teams", "innovation groups", "deep-tech organizations"],
+      "deliverables": ["technical advisory", "feasibility assessments", "prototype design", "benchmarking plans"],
+      "icon": "search",
+      "displayPriority": 1,
+      "featured": true
+    },
+    {
+      "id": "qml-model-development",
+      "name": "Hybrid Quantum-Classical Model Development",
+      "category": "technical-service",
+      "tagline": "Design and evaluation of hybrid QML pipelines.",
+      "description": "Development of resource-aware quantum machine learning pipelines and benchmarking against classical baselines under realistic hardware constraints.",
+      "targetClients": ["research labs", "quantum software teams", "startups"],
+      "deliverables": ["prototype models", "comparative benchmarking", "performance analysis"],
+      "icon": "layers",
+      "displayPriority": 2,
+      "featured": true
+    },
+    {
+      "id": "quantum-training",
+      "name": "Quantum Computing & QML Training",
+      "category": "education-service",
+      "tagline": "Structured workshops and multi-level training in quantum computing.",
+      "description": "Training programs for students, research groups, and companies covering beginner to advanced topics in quantum computing, Qiskit, and quantum machine learning.",
+      "targetClients": ["universities", "companies", "startups", "innovation programs"],
+      "deliverables": ["custom workshops", "training curriculum", "hands-on labs"],
+      "icon": "graduation-cap",
+      "displayPriority": 3,
+      "featured": true
+    }
+  ]
+}

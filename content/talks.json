@@ -1,0 +1,82 @@
+{
+  "talks": [
+    {
+      "id": "birs-resource-kernel",
+      "title": "Quantum Machine learning using a Resource-Efficient Quantum Kernel",
+      "event": "BIRS Workshop",
+      "organization": "Banff International Research Station",
+      "location": "Banff, Canada",
+      "year": 2024,
+      "type": "invited-talk",
+      "tags": ["quantum kernels", "research", "invited"],
+      "description": "Invited research talk presenting resource-efficient quantum kernel methods and their implications for near-term quantum machine learning.",
+      "videoUrl": null,
+      "featured": true,
+      "displayPriority": 1
+    },
+    {
+      "id": "qiskit-fest-talk",
+      "title": "Quantum Machine Learning with Qiskit",
+      "event": "Qiskit Fall Fest",
+      "organization": "IBM / Qiskit",
+      "location": "University of Ottawa",
+      "year": 2025,
+      "type": "community-talk",
+      "tags": ["Qiskit", "community", "QML", "education"],
+      "description": "Talk at Qiskit Fall Fest covering practical approaches to quantum machine learning and hands-on Qiskit workflows.",
+      "videoUrl": null,
+      "featured": true,
+      "displayPriority": 2
+    },
+    {
+      "id": "quantum-days-2024",
+      "title": "A Resource-Efficient Quantum Kernel — Award Presentation",
+      "event": "Quantum Days 2024",
+      "organization": "Deep Tech Canada / NRC",
+      "location": "Canada",
+      "year": 2024,
+      "type": "conference-presentation",
+      "tags": ["quantum kernels", "award", "NRC", "research"],
+      "description": "Research presentation recognized with the Deep Tech Canada NRC Student Award at Quantum Days 2024.",
+      "videoUrl": null,
+      "award": "Deep Tech Canada NRC Student Award",
+      "featured": true,
+      "displayPriority": 3
+    },
+    {
+      "id": "poster-100-years-quantum",
+      "title": "Quantum Machine Learning for the Real World",
+      "event": "Celebrating 100 Years of Quantum Science",
+      "organization": "University of Ottawa",
+      "location": "Ottawa, Canada",
+      "year": 2025,
+      "type": "poster",
+      "tags": ["QML", "poster", "award"],
+      "description": "Research poster recognized with Second Best Poster award at the University of Ottawa's centennial quantum science workshop.",
+      "videoUrl": null,
+      "award": "Second Best Poster",
+      "featured": false,
+      "displayPriority": 4
+    }
+  ],
+  "training": [
+    {
+      "id": "qamp-2025",
+      "title": "QAMP 2025 — Mentor & Contributor",
+      "organization": "IBM / Qiskit",
+      "year": 2025,
+      "type": "mentorship",
+      "description": "Contributed to and mentored in the Qiskit Advocate Mentorship Program 2025 cohort, delivering a functional quantum research outcome.",
+      "featured": true
+    },
+    {
+      "id": "qiskit-fall-fest-mentor-2025",
+      "title": "Qiskit Fall Fest 2025 — Mentor",
+      "organization": "IBM / Qiskit",
+      "year": 2025,
+      "type": "mentorship",
+      "description": "Served as official mentor for the 2025 Qiskit Fall Fest, guiding participants through quantum computing and Qiskit workshops.",
+      "featured": true
+    }
+  ]
+}

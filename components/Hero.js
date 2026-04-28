@@ -42,7 +42,7 @@ export async function buildHero() {
   const heroCredentials = [
     { label: 'PhD · Quantum ML · uOttawa',    icon: graduationIcon() },
     { label: '3 Pending WIPO Patents',         icon: shieldIcon()     },
-    { label: 'IBM Qiskit Advocate',            icon: awardIcon()      },
+    { label: 'Qiskit Advocate',            icon: awardIcon()      },
     { label: 'NRC / Deep Tech Award 2024',     icon: starIcon()       },
   ];
 
@@ -148,7 +148,7 @@ export async function buildHero() {
               <!-- Floating chip -->
               <div class="hero-avatar-chip">
                 ${awardIcon()}
-                Qiskit Advocate
+                PhD
               </div>
             </div>
           </div><!-- /.hero-visual -->

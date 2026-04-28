@@ -28,11 +28,11 @@ export async function buildExperience() {
               <div class="timeline-item__dot"></div>
               <div class="timeline-item__content">
                 <div class="timeline-item__period">
-                  ${job.startYear ?? job.start ?? ''} — ${job.endYear ?? job.end ?? 'Present'}
+                  ${formatExpDate(job.date_start)} — ${job.is_current || !job.date_end ? 'Present' : formatExpDate(job.date_end)}
                 </div>
-                <h4 class="timeline-item__title">${job.role ?? job.title ?? ''}</h4>
+                <h4 class="timeline-item__title">${job.role_title ''}</h4>
                 <p class="timeline-item__org">
-                  ${job.organization ?? job.company ?? ''}
+                  ${job.organization ''}
                   ${job.location ? `<span class="timeline-item__loc"> · ${job.location}</span>` : ''}
                 </p>
                 ${job.description ? `<p class="timeline-item__note">${job.description}</p>` : ''}
@@ -55,4 +55,14 @@ export async function buildExperience() {
       </div>
     </section>
   `;
+}
+
+
+function formatExpDate(dateStr) {
+  if (!dateStr) return '';
+  const [year, month] = dateStr.split('-');
+  if (!month) return year;
+  const months = ['Jan','Feb','Mar','Apr','May','Jun',
+                  'Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[parseInt(month) - 1]} ${year}`;
 }

@@ -1,6 +1,21 @@
 {
   "talks": [
     {
+      "id": "cafqa2026-reservoir-computing",
+      "title": "Recurrent Feature Maps for Reservoir Computing",
+      "event": "CAFQA 2026 Workshop",
+      "organization": "CAFQA",
+      "location": "Calgary, Canada",
+      "year": 2026,
+      "type": "invited-talk",
+      "tags": ["quantum reservoir computing", "QRC", "time-series", "invited"],
+      "description": "Invited talk presenting a recurrent quantum feature map framework for reservoir computing, enabling practical time-series modeling on near-term quantum hardware.",
+      "videoUrl": null,
+      "relatedPublication": "rqfmqrc2026",
+      "featured": true,
+      "displayPriority": 1
+    },
+    {
       "id": "birs-resource-kernel",
       "title": "Quantum Machine learning using a Resource-Efficient Quantum Kernel",
       "event": "BIRS Workshop",
@@ -12,7 +27,7 @@
       "description": "Invited research talk presenting resource-efficient quantum kernel methods and their implications for near-term quantum machine learning.",
       "videoUrl": null,
       "featured": true,
-      "displayPriority": 1
+      "displayPriority": 2
     },
     {
       "id": "qiskit-fest-talk",
@@ -26,7 +41,7 @@
       "description": "Talk at Qiskit Fall Fest covering practical approaches to quantum machine learning and hands-on Qiskit workflows.",
       "videoUrl": null,
       "featured": true,
-      "displayPriority": 2
+      "displayPriority": 3
     },
     {
       "id": "quantum-days-2024",
@@ -41,7 +56,7 @@
       "videoUrl": null,
       "award": "Deep Tech Canada NRC Student Award",
       "featured": true,
-      "displayPriority": 3
+      "displayPriority": 4
     },
     {
       "id": "poster-100-years-quantum",
@@ -56,7 +71,7 @@
       "videoUrl": null,
       "award": "Second Best Poster",
       "featured": false,
-      "displayPriority": 4
+      "displayPriority": 5
     }
   ],
   "training": [

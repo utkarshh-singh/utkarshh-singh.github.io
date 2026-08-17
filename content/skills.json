@@ -63,11 +63,15 @@
         { "name": "Workshop Organization", "level": "expert", "tags": ["community"] },
         { "name": "Community Mentorship", "level": "expert", "tags": ["community"] },
         { "name": "Stakeholder Engagement", "level": "expert", "tags": ["consulting"] },
-        { "name": "Cross-Team Collaboration", "level": "expert", "tags": ["research"] }
+        { "name": "Cross-Team Collaboration", "level": "expert", "tags": ["research"] },
+        { "name": "Time Management", "level": "expert", "tags": ["leadership", "consulting"] }
       ]
     }
   ],
-  "highlightSkills": ["Quantum Kernels", "QNN Architectures", "Quantum Reservoir Computing", "Qiskit", "Python"],
+  "highlightSkills": [
+    "Quantum Kernels", "Python", "Circuit Design", "PyTorch", "Classification",
+    "Git & GitHub", "Quantum Reservoir Computing", "Qiskit", "Time Management", "Technical Lectures"
+  ],
   "filterGroups": {
     "researcherView": ["quantumMachineLearning", "quantumComputing", "machineLearning"],
     "recruiterView": ["softwareTools", "machineLearning", "leadership"],

@@ -1,0 +1,50 @@
+name: Sync Google Scholar publications
+
+on:
+  schedule:
+    # Every Monday 09:00 UTC. Google Scholar has no webhook/API, so a
+    # weekly poll is the practical option.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-scholar
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Sync publications from Google Scholar
+        # The script itself is the safety net: it validates everything
+        # it pulls, only ever adds new (unfeatured) publications or
+        # updates citation counts, and aborts without writing anything
+        # if the scrape looks blocked, partial, or malformed. So a
+        # direct commit here is safe to run unattended.
+        run: python .github/scripts/sync_scholar.py
+
+      - name: Commit changes if any
+        run: |
+          if git diff --quiet -- content/publications.json; then
+            echo "No changes — nothing to commit."
+            exit 0
+          fi
+          git config user.name "scholar-sync-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/publications.json
+          git commit -m "chore: sync publications from Google Scholar [automated]"
+          git push

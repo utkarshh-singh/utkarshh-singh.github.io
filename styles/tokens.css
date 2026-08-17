@@ -1,115 +1,150 @@
 /* =============================================================
-   TOKENS.CSS — Design Tokens
-   The single source of truth for ALL visual values.
-   
-   HOW TO USE:
-   - Never hardcode colors, sizes, or spacing in component CSS
-   - Always reference a token: color: var(--color-text)
-   - To change the whole site's feel: edit values here only
+   TOKENS.CSS — Design system variables.
+   Dark is the default surface; [data-theme="light"] overrides.
    ============================================================= */
 
-/* ─── TYPOGRAPHY ─────────────────────────────────────────────
-   Fonts are loaded in each HTML file's <head>.
-   --font-display: Used for headings (h1–h3, hero text)
-   --font-body:    Used for everything else (paragraphs, nav, buttons)
-   ──────────────────────────────────────────────────────────── */
 :root {
-  --font-display: 'Zodiak', 'Georgia', serif;
-  --font-body:    'Satoshi', 'Inter', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+  /* ─── Type ─────────────────────────────────────────────── */
+  --font-display: "Clash Display", "General Sans", "Helvetica Neue", sans-serif;
+  --font-body: "General Sans", "Inter", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  --fs-2xs: 0.6875rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --fs-xl: clamp(1.6rem, 1.35rem + 1.1vw, 2.25rem);
+  --fs-2xl: clamp(2.1rem, 1.7rem + 1.8vw, 3.25rem);
+  --fs-3xl: clamp(2.75rem, 2.1rem + 3vw, 4.75rem);
+  --fs-hero: clamp(3.2rem, 2rem + 6.2vw, 7.5rem);
+
+  --lh-tight: 1.05;
+  --lh-snug: 1.25;
+  --lh-normal: 1.55;
+  --lh-relaxed: 1.75;
+
+  /* ─── Spacing scale ────────────────────────────────────── */
+  --sp-3xs: 0.25rem;
+  --sp-2xs: 0.5rem;
+  --sp-xs: 0.75rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 2.25rem;
+  --sp-xl: 3.5rem;
+  --sp-2xl: 5.5rem;
+  --sp-3xl: 8.5rem;
+
+  --section-pad: clamp(4.5rem, 3.2rem + 5vw, 8.5rem);
+  --container-w: 1280px;
+  --container-pad: clamp(1.25rem, 0.6rem + 2.6vw, 3rem);
+
+  /* ─── Radii ────────────────────────────────────────────── */
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 32px;
+  --r-full: 999px;
+
+  /* ─── Motion ───────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+
+  /* ─── Z-index scale ────────────────────────────────────── */
+  --z-bg: -1;
+  --z-base: 1;
+  --z-card: 10;
+  --z-nav: 900;
+  --z-fab: 800;
+  --z-cursor: 9999;
+  --z-loader: 10000;
+
+  /* ─── Accent palette (shared across themes) ───────────── */
+  --hue-cyan: 174;
+  --hue-violet: 262;
+  --hue-magenta: 320;
+  --hue-amber: 38;
 }
 
-/* ─── TYPE SCALE (fluid — scales smoothly with viewport) ────
-   Usage: font-size: var(--text-base);
-   
-   --text-xs    → tiny labels, badges, metadata (12px floor)
-   --text-sm    → buttons, nav links (14–16px)
-   --text-base  → all body copy (16–18px) ← DEFAULT
-   --text-lg    → section subheadings (18–24px)
-   --text-xl    → section headings (24–36px)
-   --text-2xl   → page titles, hero subtitle (32–56px)
-   --text-3xl   → hero heading (40–80px)
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
-  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
-  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
-  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
-  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+/* ─── Dark theme (default) ────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #050609;
+  --bg-soft: #0a0c14;
+  --bg-elevated: #0d1019;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --text: #f3f4fa;
+  --text-dim: #a2a8bd;
+  --text-faint: #656b81;
+
+  --accent-cyan: #2af5d0;
+  --accent-violet: #9b6bff;
+  --accent-magenta: #ff5fc4;
+  --accent-amber: #ffb454;
+
+  --glow-strength: 0.4;
+  --grain-opacity: 0.05;
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevated:
+    0 1px 1px hsl(var(--shadow-color) / 0.3),
+    0 4px 10px hsl(var(--shadow-color) / 0.35),
+    0 20px 45px hsl(var(--shadow-color) / 0.45);
 }
 
-/* ─── SPACING SCALE (4px base unit) ─────────────────────────
-   Every margin, padding, gap must use one of these tokens.
-   
-   --space-1  →  4px   (icon gaps, tight internal padding)
-   --space-2  →  8px   (badge padding, small gaps)
-   --space-4  → 16px   (default component padding)
-   --space-8  → 32px   (card padding, form gaps)
-   --space-16 → 64px   (section spacing)
-   --space-24 → 96px   (large section spacing)
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --space-1:  0.25rem;  /*  4px */
-  --space-2:  0.5rem;   /*  8px */
-  --space-3:  0.75rem;  /* 12px */
-  --space-4:  1rem;     /* 16px */
-  --space-5:  1.25rem;  /* 20px */
-  --space-6:  1.5rem;   /* 24px */
-  --space-8:  2rem;     /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
-  --space-24: 6rem;     /* 96px */
-  --space-32: 8rem;     /* 128px */
+/* ─── Light theme ──────────────────────────────────────────── */
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f3f4f9;
+  --bg-soft: #ffffff;
+  --bg-elevated: #ffffff;
+  --surface: rgba(15, 18, 35, 0.035);
+  --surface-hover: rgba(15, 18, 35, 0.065);
+  --surface-strong: rgba(15, 18, 35, 0.08);
+  --border: rgba(15, 18, 35, 0.1);
+  --border-strong: rgba(15, 18, 35, 0.18);
+
+  --text: #10111c;
+  --text-dim: #4c5064;
+  --text-faint: #83879b;
+
+  --accent-cyan: #068f82;
+  --accent-violet: #6d3ce0;
+  --accent-magenta: #c22592;
+  --accent-amber: #a06407;
+
+  --glow-strength: 0.16;
+  --grain-opacity: 0.025;
+  --shadow-color: 222deg 30% 45%;
+  --shadow-elevated:
+    0 1px 1px hsl(var(--shadow-color) / 0.06),
+    0 4px 10px hsl(var(--shadow-color) / 0.08),
+    0 20px 45px hsl(var(--shadow-color) / 0.12);
 }
 
-/* ─── BORDER RADIUS ──────────────────────────────────────────
-   Match radius to element size:
-   - sm  → inputs, small buttons, tags
-   - md  → cards, medium components  
-   - lg  → large cards, modals
-   - xl  → hero cards, large panels
-   - full→ pills, circular avatars
-   ──────────────────────────────────────────────────────────── */
 :root {
-  --radius-sm:   0.25rem;   /*  4px */
-  --radius-md:   0.5rem;    /*  8px */
-  --radius-lg:   0.75rem;   /* 12px */
-  --radius-xl:   1rem;      /* 16px */
-  --radius-2xl:  1.5rem;    /* 24px */
-  --radius-full: 9999px;
-}
-
-/* ─── TRANSITIONS ────────────────────────────────────────────
-   Use these for hover/focus states. Never use raw ms values.
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --transition-fast:        120ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow:        320ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ─── CONTENT WIDTH CONTAINERS ───────────────────────────────
-   Use these for max-width on page sections.
-   
-   --content-narrow  → prose text, forms (640px)
-   --content-default → most page content (960px)
-   --content-wide    → full layouts (1200px)
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --content-narrow:  640px;
-  --content-default: 1140px;
-  --content-wide:    1200px;
-}
-
-/* ─── LAYOUT ─────────────────────────────────────────────────
-   Header height is referenced by all pages for offset spacing.
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --header-height: 4rem;   /* 64px — used for scroll-padding-top */
-  --nav-z:         100;
-  --overlay-z:     200;
+  --gradient-brand: linear-gradient(
+    120deg,
+    var(--accent-cyan) 0%,
+    var(--accent-violet) 52%,
+    var(--accent-magenta) 100%
+  );
+  --gradient-brand-soft: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--accent-cyan) 60%, transparent) 0%,
+    color-mix(in srgb, var(--accent-violet) 60%, transparent) 52%,
+    color-mix(in srgb, var(--accent-magenta) 60%, transparent) 100%
+  );
 }

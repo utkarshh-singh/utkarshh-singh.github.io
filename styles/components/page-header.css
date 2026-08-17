@@ -1,0 +1,41 @@
+/* =============================================================
+   PAGE-HEADER.CSS — Shared hero strip for interior pages
+   ============================================================= */
+
+.page-header {
+  position: relative;
+  padding-top: clamp(7rem, 6rem + 3vw, 9rem);
+  padding-bottom: clamp(1.5rem, 1rem + 1.5vw, 2.5rem);
+  overflow: clip;
+}
+
+.page-header .glow-blob {
+  width: 46vw;
+  height: 46vw;
+  max-width: 640px;
+  max-height: 640px;
+  top: -18%;
+  right: -12%;
+  background: var(--gradient-brand);
+}
+
+.page-header__inner { position: relative; z-index: 1; max-width: 50rem; }
+
+.page-header__title {
+  font-size: var(--fs-3xl);
+  margin-bottom: 1rem;
+}
+
+.page-header__subtitle {
+  font-size: var(--fs-md);
+  color: var(--text-dim);
+  line-height: var(--lh-relaxed);
+  max-width: 40rem;
+}
+
+.page-header__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  margin-top: 1.6rem;
+}

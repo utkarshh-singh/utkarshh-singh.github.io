@@ -1,0 +1,186 @@
+/* =============================================================
+   EFFECTS.CSS — Glass surfaces, glow, custom cursor, loader
+   ============================================================= */
+
+/* ─── Glass surface ──────────────────────────────────────── */
+.glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glow-border {
+  position: relative;
+}
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-brand);
+  opacity: 0;
+  transition: opacity var(--dur-base) var(--ease-out);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.glow-border:hover::before,
+.glow-border:focus-within::before { opacity: 1; }
+
+/* Glare sweep used on tilt cards */
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    color-mix(in srgb, var(--accent-cyan) 22%, transparent),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+  pointer-events: none;
+  z-index: 2;
+}
+[data-tilt]:hover .tilt-glare { opacity: var(--glow-strength, 0.4); }
+
+/* ─── Custom cursor ──────────────────────────────────────── */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-cyan);
+  transition: opacity 0.2s;
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid color-mix(in srgb, var(--accent-cyan) 65%, transparent);
+  transition: width 0.25s var(--ease-out), height 0.25s var(--ease-out), border-color 0.25s, background 0.25s, opacity 0.2s;
+}
+.cursor-ring.is-active {
+  width: 56px;
+  height: 56px;
+  background: color-mix(in srgb, var(--accent-violet) 14%, transparent);
+  border-color: color-mix(in srgb, var(--accent-magenta) 70%, transparent);
+}
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button {
+  cursor: none;
+}
+.cursor-dot, .cursor-ring { opacity: 0; }
+body.cursor-ready .cursor-dot,
+body.cursor-ready .cursor-ring { opacity: 1; }
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none; }
+  body.has-custom-cursor { cursor: auto; }
+}
+
+/* ─── Badges / pills / tags ──────────────────────────────── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.4em 0.9em;
+  border-radius: var(--r-full);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-dim);
+}
+.pill--accent {
+  color: var(--accent-cyan);
+  border-color: color-mix(in srgb, var(--accent-cyan) 40%, transparent);
+  background: color-mix(in srgb, var(--accent-cyan) 10%, transparent);
+}
+.pill--dot::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4em 0.85em;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color var(--dur-fast), color var(--dur-fast), transform var(--dur-fast);
+}
+.tag:hover { border-color: var(--accent-cyan); color: var(--text); }
+
+/* ─── Preloader ──────────────────────────────────────────── */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--sp-md);
+  transition: opacity 0.6s var(--ease-out), visibility 0.6s;
+}
+#preloader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader-mark {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent-cyan);
+  border-right-color: var(--accent-violet);
+  animation: spin 0.9s linear infinite;
+}
+.preloader-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── Animated counters ─────────────────────────────────── */
+[data-counter] { font-variant-numeric: tabular-nums; }
+
+/* ─── Divider ────────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  border: none;
+}
+
+/* ─── Noise-free glow blob (used behind heroes/sections) ──── */
+.glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: var(--glow-strength);
+  pointer-events: none;
+  z-index: 0;
+}

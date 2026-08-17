@@ -59,21 +59,6 @@
       "featured": true,
       "displayPriority": 2,
       "group": "Quantum Platforms"
-    },
-    {
-      "id": "uottawa-leadership",
-      "name": "Transformational Leadership",
-      "displayName": "AWS Knowledge: Amazon Braket",
-      "issuer": "Amazon Web Services",
-      "issuerShort": "AWS",
-      "year": 2024,
-      "type": "certificate",
-      "credentialUrl": "https://www.credly.com/org/amazon-web-services/badge/aws-knowledge-amazon-braket-training-badge",
-      "description": "AWS credential focused on Amazon Braket and cloud-based quantum computing workflows.",
-      "skills": ["Amazon Braket", "AWS", "Cloud Quantum Computing"],
-      "featured": true,
-      "displayPriority": 2,
-      "group": "Quantum Platforms"
     }
   ],
   "badges": [

@@ -1,38 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" data-palette="teal">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utkarsh Singh</title>
-  <meta name="description" content="Quantum ML researcher, engineer, and consultant." />
+  <meta name="theme-color" content="#050609" />
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme-preference');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <title>Skills — Utkarsh Singh</title>
+  <meta name="description" content="Technical skills, credentials, education, and experience of Utkarsh Singh." />
+
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="./styles/tokens.css" />
-  <link rel="stylesheet" href="./styles/theme.css" />
   <link rel="stylesheet" href="./styles/base.css" />
   <link rel="stylesheet" href="./styles/layout.css" />
+  <link rel="stylesheet" href="./styles/effects.css" />
   <link rel="stylesheet" href="./styles/components/nav.css" />
+  <link rel="stylesheet" href="./styles/components/buttons.css" />
   <link rel="stylesheet" href="./styles/components/hero.css" />
   <link rel="stylesheet" href="./styles/components/cards.css" />
-  <link rel="stylesheet" href="./styles/components/buttons.css" />
-  <link rel="stylesheet" href="./styles/components/footer.css" />
-  <link rel="stylesheet" href="./styles/components/projects.css" />
-  <link rel="stylesheet" href="./styles/components/patents.css" />
-  <link rel="stylesheet" href="./styles/components/fab.css" />
+  <link rel="stylesheet" href="./styles/components/page-header.css" />
+  <link rel="stylesheet" href="./styles/components/timeline.css" />
   <link rel="stylesheet" href="./styles/components/skills.css" />
-  <link rel="stylesheet" href="./styles/components/talks.css" />
-  <link rel="stylesheet" href="./styles/components/services.css" />
   <link rel="stylesheet" href="./styles/components/contact.css" />
+  <link rel="stylesheet" href="./styles/components/footer.css" />
+  <link rel="stylesheet" href="./styles/components/fab.css" />
+
   <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="./assets/icons/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="./assets/icons/favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="icon" href="./assets/icons/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <div id="preloader" aria-hidden="true">
+    <div class="preloader-mark"></div>
+    <span class="preloader-label">Loading</span>
+  </div>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
   <div class="page-shell">
     <div id="site-header" role="banner"></div>
     <main id="main-content" class="site-main" tabindex="-1"></main>
     <div id="site-footer" role="contentinfo"></div>
   </div>
-  <script type="module" src="./pages/skills.js"></script>
+
+  <script type="module" src="./scripts/pages/skills.js"></script>
 </body>
 </html>

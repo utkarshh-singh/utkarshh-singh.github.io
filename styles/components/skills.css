@@ -2,20 +2,37 @@
    SKILLS.CSS — Orbit visual, skill category cards, credential tabs
    ============================================================= */
 
-/* Tighter than the shared .section/.section--tight rhythm — this
-   section is a compact visual between the page header and the
-   category breakdown, not a full content section, so it shouldn't
-   claim a full section's worth of vertical space. */
-.orbit-section {
-  padding-block: clamp(1rem, 0.6rem + 2vw, 2.25rem);
+/* ─── Skills hero — title/stats and the orbit side by side, instead
+   of stacking (which was pushing everything below the fold) ────── */
+.skills-hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(1.5rem, 1rem + 3vw, 4rem);
+}
+@media (max-width: 900px) {
+  .skills-hero__grid { grid-template-columns: 1fr; }
 }
 
 /* ─── Orbit hero visual (highlight skills) ──────────────── */
+/* Pill radius is derived from --orbit-size (below) rather than an
+   independent vw formula, so it can never exceed the box the pills
+   are meant to stay inside of — the two used to drift apart on narrow
+   viewports and pills got clipped by the screen edge. The floor on
+   --orbit-size keeps things readable on very small phones instead of
+   shrinking indefinitely. */
 .orbit {
+  --orbit-size: clamp(230px, 76vw, 360px);
   position: relative;
-  width: min(380px, 78vw);
+  width: var(--orbit-size);
   aspect-ratio: 1;
   margin-inline: auto;
+  /* pills are allowed to extend slightly past this box (no clipping) —
+     it's a sizing reference for the rings/core, not a hard boundary */
+  overflow: visible;
+}
+@media (max-width: 900px) {
+  .orbit { margin-top: 1rem; }
 }
 .orbit__core {
   position: absolute;
@@ -58,12 +75,20 @@
 .orbit__item .pill {
   white-space: nowrap;
   animation: orbit-spin-ccw 42s linear infinite;
+  /* Shrinks alongside --orbit-size on narrow screens — smaller pills
+     need less radial gap, which is what actually keeps the two rings
+     from overlapping once the whole orbit is forced smaller. */
+  font-size: clamp(0.5rem, 0.36rem + 0.5vw, 0.6875rem);
+  padding: clamp(0.3em, 0.22em + 0.28vw, 0.4em) clamp(0.6em, 0.44em + 0.56vw, 0.9em);
 }
 
-.orbit__item {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.orbit__item { position: absolute; top: 50%; left: 50%; }
+.orbit__group--outer .orbit__item {
+  --radius: calc(var(--orbit-size) * 0.4583);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+}
+.orbit__group--inner .orbit__item {
+  --radius: calc(var(--orbit-size) * 0.25);
   transform: translate(-50%, -50%) rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
 }
 

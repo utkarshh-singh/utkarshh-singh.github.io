@@ -5,7 +5,6 @@
 
 import { fetchJSON } from '../core/data.js';
 import { icon } from '../core/icons.js';
-import { buildPageHeader } from './PageHeader.js';
 
 const CATEGORY_ICON = {
   quantumMachineLearning: icon.atom,
@@ -35,28 +34,37 @@ export async function buildSkillsPage() {
 
   const categories = skills?.categories ?? [];
   const highlights = skills?.highlightSkills ?? [];
-
-  const header = buildPageHeader({
-    eyebrow: 'Skills',
-    title: 'Expertise &amp; credentials',
-    subtitle: 'Technical depth across quantum machine learning, quantum computing, classical ML, and the tools used to ship research into working systems.',
-    stats: [
-      { value: `${categories.reduce((n, c) => n + (c.skills?.length ?? 0), 0)}`, label: 'Skills tracked' },
-      { value: `${(certs?.certifications?.length ?? 0) + (certs?.badges?.length ?? 0)}`, label: 'Credentials' },
-    ],
-  });
+  const skillCount = categories.reduce((n, c) => n + (c.skills?.length ?? 0), 0);
+  const credentialCount = (certs?.certifications?.length ?? 0) + (certs?.badges?.length ?? 0);
 
   return `
-    ${header}
-
-    <section class="orbit-section">
+    <section class="page-header skills-hero">
+      <div class="glow-blob" aria-hidden="true"></div>
       <div class="container">
-        <div class="orbit reveal-fade is-visible" aria-label="Highlighted skills: ${highlights.join(', ')}">
-          <div class="orbit__ring" aria-hidden="true"></div>
-          <div class="orbit__ring orbit__ring--2" aria-hidden="true"></div>
-          <div class="orbit__core">${icon.atom(28)}</div>
-          ${orbitRing(highlights.filter((_, i) => i % 2 === 0), 'outer', 'min(165px, 35vw)', 0)}
-          ${orbitRing(highlights.filter((_, i) => i % 2 !== 0), 'inner', 'min(90px, 20vw)', 36)}
+        <div class="skills-hero__grid">
+          <div class="page-header__inner reveal-fade is-visible">
+            <p class="section-eyebrow">Skills</p>
+            <h1 class="page-header__title">Expertise &amp; credentials</h1>
+            <p class="page-header__subtitle">Technical depth across quantum machine learning, quantum computing, classical ML, and the tools used to ship research into working systems.</p>
+            <div class="page-header__stats">
+              <div class="hero-stat">
+                <span class="hero-stat__number" data-counter="${skillCount}">0</span>
+                <span class="hero-stat__label">Skills tracked</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat__number" data-counter="${credentialCount}">0</span>
+                <span class="hero-stat__label">Credentials</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="orbit reveal-fade is-visible" aria-label="Highlighted skills: ${highlights.join(', ')}">
+            <div class="orbit__ring" aria-hidden="true"></div>
+            <div class="orbit__ring orbit__ring--2" aria-hidden="true"></div>
+            <div class="orbit__core">${icon.atom(28)}</div>
+            ${orbitRing(highlights.filter((_, i) => i % 2 === 0), 'outer', 0)}
+            ${orbitRing(highlights.filter((_, i) => i % 2 !== 0), 'inner', 36)}
+          </div>
         </div>
       </div>
     </section>
@@ -102,19 +110,19 @@ export async function buildSkillsPage() {
   `;
 }
 
-function orbitRing(skills, variant, radius, phaseOffset) {
+function orbitRing(skills, variant, phaseOffset) {
   return `
     <div class="orbit__group orbit__group--${variant}">
-      ${skills.map((name, i) => orbitItem(name, i, skills.length, radius, phaseOffset)).join('')}
+      ${skills.map((name, i) => orbitItem(name, i, skills.length, phaseOffset)).join('')}
     </div>
   `;
 }
 
-function orbitItem(name, i, total, radius, phaseOffset) {
+function orbitItem(name, i, total, phaseOffset) {
   const angle = (360 / total) * i + phaseOffset;
   const label = ORBIT_LABEL[name] ?? name;
   return `
-    <div class="orbit__item" style="--angle:${angle}deg; --radius:${radius};">
+    <div class="orbit__item" style="--angle:${angle}deg;">
       <span class="pill pill--accent" title="${name}">${label}</span>
     </div>
   `;

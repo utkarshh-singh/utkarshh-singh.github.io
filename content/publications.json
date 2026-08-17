@@ -26,7 +26,8 @@
       "featured": true,
       "displayPriority": 1,
       "doiUrl": "https://doi.org/10.48550/arXiv.2604.03469",
-      "bibtex": "@article{singh2026qrc,\n  title={Recurrent Quantum Feature Maps for Reservoir Computing},\n  author={Singh, Utkarsh},\n  year={2026}\n}"
+      "bibtex": "@article{singh2026qrc,\n  title={Recurrent Quantum Feature Maps for Reservoir Computing},\n  author={Singh, Utkarsh},\n  year={2026}\n}",
+      "citedBy": 0
     },
     {
       "id": "resourcekernel2025",
@@ -56,7 +57,8 @@
       "featured": true,
       "displayPriority": 2,
       "doiUrl": "https://arxiv.org/abs/2507.03689",
-      "bibtex": "@article{singh2025qkernel,\n  title={A Resource-Efficient Quantum Kernel},\n  author={Singh, Utkarsh},\n  year={2025}\n}"
+      "bibtex": "@article{singh2025qkernel,\n  title={A Resource-Efficient Quantum Kernel},\n  author={Singh, Utkarsh},\n  year={2025}\n}",
+      "citedBy": 3
     },
     {
       "id": "cffqnn2024",
@@ -85,14 +87,20 @@
       "featured": true,
       "displayPriority": 3,
       "doiUrl": "https://doi.org/10.1007/s42484-024-00222-8",
-      "bibtex": "@article{singh2024qnn,\n  title={Coherent Feed-Forward Quantum Neural Network},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+      "bibtex": "@article{singh2024qnn,\n  title={Coherent Feed-Forward Quantum Neural Network},\n  author={Singh, Utkarsh},\n  year={2024}\n}",
+      "citedBy": 0
     },
     {
       "id": "mofhydrogen2024",
       "title": "Seeking Metal-Organic Frameworks for Hydrogen Storage Using Classical and Quantum Active Learning",
       "shortTitle": "MOF Hydrogen Storage QML",
       "authors": [
-        "MP Lourenço", "R Shukla", "D Gaur", "U Singh", "D Salahub", "M Naseri",
+        "MP Lourenço",
+        "R Shukla",
+        "D Gaur",
+        "U Singh",
+        "D Salahub",
+        "M Naseri",
         "et al."
       ],
       "year": 2024,
@@ -113,14 +121,17 @@
       "featured": false,
       "displayPriority": 4,
       "doiUrl": "https://doi.org/10.1039/D5CP02747K",
-      "bibtex": "@article{singh2024mof,\n  title={Seeking Metal-Organic Frameworks for Hydrogen Storage Using Quantum ML},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+      "bibtex": "@article{singh2024mof,\n  title={Seeking Metal-Organic Frameworks for Hydrogen Storage Using Quantum ML},\n  author={Singh, Utkarsh},\n  year={2024}\n}",
+      "citedBy": 3
     },
     {
       "id": "localqkernels2024",
       "title": "Local and Multi-Scale Strategies to Mitigate Exponential Concentration in Quantum Kernels",
       "shortTitle": "Quantum Kernel Concentration",
       "authors": [
-        "C Zendejas-Morales", "D Saikia", "U Singh"
+        "C Zendejas-Morales",
+        "D Saikia",
+        "U Singh"
       ],
       "year": 2026,
       "status": "preprint",
@@ -140,7 +151,58 @@
       "featured": false,
       "displayPriority": 5,
       "doiUrl": "https://doi.org/10.48550/arXiv.2602.16097",
-      "bibtex": "@article{singh2024barren,\n  title={Local and Multi-Scale Strategies to Mitigate Exponential Concentration},\n  author={Singh, Utkarsh},\n  year={2024}\n}"
+      "bibtex": "@article{singh2024barren,\n  title={Local and Multi-Scale Strategies to Mitigate Exponential Concentration},\n  author={Singh, Utkarsh},\n  year={2024}\n}",
+      "citedBy": 0
+    },
+    {
+      "id": "towards-real-world-quantum-machine-learning-2026",
+      "title": "Towards Real-World Quantum Machine Learning",
+      "shortTitle": "Towards Real-World Quantum Machine Learning",
+      "authors": [
+        "Utkarsh Singh"
+      ],
+      "year": 2026,
+      "status": "preprint",
+      "venue": "arXiv",
+      "tags": [],
+      "abstract": "Quantum machine learning (QML) promises new representational and computational capabilities, yet practical deployment on near-term hardware is hampered by resource overheads, depth constraints, and fragile trainability. This thesis advances resource-aware QML by proposing architectures and kernels that retain expressivity while sharply reducing qubit counts, circuit depth, and entangling-gate budgets. The work is presented in an article-based format with three core contributions. First, I introduce a Coherent Feed-Forward Quantum Neural Network (CFF-QNN) that preserves quantum coherence across all layers, mirrors the flexibility of classical feed-forward networks (adjustable hidden layers and nodes), and decouples qubit requirements from input feature dimension. Compared to prevailing QNN baselines, the CFF-QNN reduces both depth and CNOT count by over 50% while achieving strong performance on standard benchmarks (eg, 91% accuracy on Wisconsin breast cancer and 85% on credit-card fraud). This contribution is accompanied by an international patent filing (WO2025050205A1). Second, I develop a resource-efficient quantum kernel that enables high-dimensional embeddings with substantially fewer qubits and entanglers, achieving linear scaling of entangling gates in the number of qubits. Empirically, the kernel delivers competitive or superior performance to widely used classical kernels and to popular quantum feature maps (eg, on the Parkinson's disease dataset), with noisy simulations and small-scale runs on superconducting hardware indicating suitability for near-term devices. This contribution is covered by a …",
+      "links": {
+        "doi": null,
+        "arxiv": null,
+        "pdf": "https://ruor.uottawa.ca/items/069dda30-0f08-41e7-8c2f-b1b143f5063f"
+      },
+      "citedBy": 0,
+      "featured": false,
+      "displayPriority": 6,
+      "doiUrl": "https://ruor.uottawa.ca/items/069dda30-0f08-41e7-8c2f-b1b143f5063f",
+      "bibtex": null,
+      "autoAdded": true
+    },
+    {
+      "id": "resource-efficient-quantum-kernel-with-iterative-2025",
+      "title": "Resource efficient quantum kernel with iterative appending for support vector machines",
+      "shortTitle": "Resource efficient quantum kernel with iterative appending f",
+      "authors": [
+        "Utkarsh Singh",
+        "Aaron Z Goldberg",
+        "Khabat Heshami"
+      ],
+      "year": 2025,
+      "status": "preprint",
+      "venue": "arXiv",
+      "tags": [],
+      "abstract": "",
+      "links": {
+        "doi": null,
+        "arxiv": null,
+        "pdf": null
+      },
+      "citedBy": 0,
+      "featured": false,
+      "displayPriority": 7,
+      "doiUrl": null,
+      "bibtex": null,
+      "autoAdded": true
     }
   ]
 }
